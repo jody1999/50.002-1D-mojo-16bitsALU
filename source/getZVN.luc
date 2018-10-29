@@ -1,0 +1,19 @@
+module getZVN (
+
+    input a[16],
+    input b[16],
+    input out[16],
+    input alufn[6],
+    output z,
+    output v,
+    output n
+  ) {
+
+  always {
+     
+    z = !(out);
+    n = out[15];
+    v = (a[15] & (!out[15]) & (alufn[0] ^ b[15])) | ((!a[15]) & out[15] & !(alufn[0] ^ b[15]));
+    
+  }
+}

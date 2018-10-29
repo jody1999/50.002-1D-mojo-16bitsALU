@@ -1,0 +1,58 @@
+module combinedALU (
+    input a[16],
+    input b[16],
+    input alufn[6],
+    
+    output out[16],
+    output z,
+    output v,
+    output n
+) {
+
+  adder_16bits   add;
+  compare_16bits cmp;
+  shift_16bits   shf;
+  boolean_16bits bool;
+  getZVN    zvn;
+
+  always {
+    out = 0;
+              
+    add.a = a;         //assign to add modulel
+    add.b = b;
+    add.alufn0 = alufn[0];
+              
+    bool.a = a;        //assign to boolean module
+    bool.b = b;
+    bool.alufn = alufn;
+    
+    shf.a = a;        //assign to shift module
+    shf.b = b;
+    shf.alufn = alufn;
+
+    zvn.a = a;         //assign to getZVN module
+    zvn.b = b;
+    zvn.alufn = alufn;
+    zvn.out = add.out;
+
+    z = zvn.z;          //assign from ZVN module to get z,v,n
+    v = zvn.v;
+    n = zvn.n;
+
+    cmp.z = zvn.z;      //assign to compare module
+    cmp.v = zvn.v;
+    cmp.n = zvn.n;
+    cmp.alufn = alufn;
+
+     
+    case(alufn[5:4]) {
+      2b00:out = add.out;
+      2b01:out = bool.out;
+      2b10:out = shf.out;
+      2b11:out = cmp.out;
+      
+      default:
+        out = 16h0000;
+    }
+  }
+}
