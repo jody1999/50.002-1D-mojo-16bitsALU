@@ -19,6 +19,8 @@ module mojo_top_0 (
   
   reg rst;
   
+  localparam TIME_INDEX = 5'h1b;
+  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (
@@ -45,24 +47,34 @@ module mojo_top_0 (
     .sel(M_seg_sel)
   );
   reg [26:0] M_counter_d, M_counter_q = 1'h0;
-  localparam ADD_iter = 4'd0;
-  localparam SUB_iter = 4'd1;
-  localparam AND_iter = 4'd2;
-  localparam OR_iter = 4'd3;
-  localparam XOR_iter = 4'd4;
-  localparam LDR_iter = 4'd5;
-  localparam SHL_iter = 4'd6;
-  localparam SHR_iter = 4'd7;
-  localparam SRA_iter = 4'd8;
-  localparam CEQ_iter = 4'd9;
-  localparam CLT_iter = 4'd10;
-  localparam CLE_iter = 4'd11;
-  localparam MUL_iter = 4'd12;
-  localparam DIV_iter = 4'd13;
-  localparam ERR_iter = 4'd14;
-  localparam PAS_iter = 4'd15;
+  localparam ADD_iter = 5'd0;
+  localparam SUB_iter = 5'd1;
+  localparam AND_iter = 5'd2;
+  localparam OR_iter = 5'd3;
+  localparam XOR_iter = 5'd4;
+  localparam LDR_iter = 5'd5;
+  localparam XNOR_iter = 5'd6;
+  localparam SHL_iter = 5'd7;
+  localparam SHR_iter = 5'd8;
+  localparam SRA_iter = 5'd9;
+  localparam CEQ_iter = 5'd10;
+  localparam CLT_iter = 5'd11;
+  localparam CLE_iter = 5'd12;
+  localparam MUL_iter = 5'd13;
+  localparam DIV_iter = 5'd14;
+  localparam MOD_iter = 5'd15;
+  localparam OEF_iter = 5'd16;
+  localparam ZER_iter = 5'd17;
+  localparam NADDN_iter = 5'd18;
+  localparam NADDP_iter = 5'd19;
+  localparam NMULN_iter = 5'd20;
+  localparam NMULP_iter = 5'd21;
+  localparam NDDEN_iter = 5'd22;
+  localparam NDDEP_iter = 5'd23;
+  localparam ERR_iter = 5'd24;
+  localparam PAS_iter = 5'd25;
   
-  reg [3:0] M_iter_d, M_iter_q = ADD_iter;
+  reg [4:0] M_iter_d, M_iter_q = ADD_iter;
   localparam MANUAL_mode = 1'd0;
   localparam AUTO_mode = 1'd1;
   
@@ -76,6 +88,7 @@ module mojo_top_0 (
   wire [1-1:0] M_alu_z;
   wire [1-1:0] M_alu_v;
   wire [1-1:0] M_alu_n;
+  wire [8-1:0] M_alu_led;
   reg [16-1:0] M_alu_a;
   reg [16-1:0] M_alu_b;
   reg [6-1:0] M_alu_alufn;
@@ -90,7 +103,8 @@ module mojo_top_0 (
     .out(M_alu_out),
     .z(M_alu_z),
     .v(M_alu_v),
-    .n(M_alu_n)
+    .n(M_alu_n),
+    .led(M_alu_led)
   );
   
   always @* begin
@@ -105,7 +119,7 @@ module mojo_top_0 (
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     M_counter_d = M_counter_q + 1'h1;
-    led[0+7-:8] = 8'h00;
+    led = M_alu_led;
     io_led[0+7-:8] = 8'h00;
     io_led[8+7-:8] = 8'h00;
     io_led[16+7-:8] = 8'h00;
@@ -135,10 +149,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h00;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0006) begin
+          if (M_alu_out == 16'h0006) begin
+            M_seg_values = 16'h144b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = SUB_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h1445;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -147,10 +165,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h01;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0002) begin
+          if (M_alu_out == 16'h0002) begin
+            M_seg_values = 16'hde2b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = AND_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'hde25;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -159,10 +181,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h18;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0000) begin
+          if (M_alu_out == 16'h0000) begin
+            M_seg_values = 16'h194b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = OR_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h1945;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -171,10 +197,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h1e;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0006) begin
+          if (M_alu_out == 16'h0006) begin
+            M_seg_values = 16'hac0b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = XOR_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'hac05;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -183,10 +213,30 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h16;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0006) begin
+          if (M_alu_out == 16'h0006) begin
+            M_seg_values = 16'hfacb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = XNOR_iter;
+            end
+          end else begin
+            M_seg_values = 16'hfac5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        XNOR_iter: begin
+          M_alu_a[0+15-:16] = 16'h0004;
+          M_alu_b[0+15-:16] = 16'h0002;
+          M_alu_alufn = 6'h19;
+          if (M_alu_out == 16'hfff9) begin
+            M_seg_values = 16'hf9ab;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = LDR_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'hf9a5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -195,10 +245,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h1a;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0004) begin
+          if (M_alu_out == 16'h0004) begin
+            M_seg_values = 16'h74cb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = SHL_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h74c5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -207,10 +261,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h20;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0010) begin
+          if (M_alu_out == 16'h0010) begin
+            M_seg_values = 16'hd67b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = SHR_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'hd675;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -219,10 +277,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h21;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0001) begin
+          if (M_alu_out == 16'h0001) begin
+            M_seg_values = 16'hd6cb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = SRA_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'hd6c5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -231,10 +293,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h23;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0001) begin
+          if (M_alu_out == 16'h0001) begin
+            M_seg_values = 16'hdc1b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = CEQ_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'hdc15;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -243,10 +309,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h33;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0000) begin
+          if (M_alu_out == 16'h0000) begin
+            M_seg_values = 16'h35ab;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = CLT_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h35a5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -255,10 +325,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h35;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0000) begin
+          if (M_alu_out == 16'h0000) begin
+            M_seg_values = 16'h370b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = CLE_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h3705;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -267,10 +341,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h37;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0000) begin
+          if (M_alu_out == 16'h0000) begin
+            M_seg_values = 16'h375b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = MUL_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h3755;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -279,10 +357,14 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h02;
-          if (M_counter_q[26+0-:1] == 1'h1) begin
-            if (M_alu_out == 16'h0010) begin
+          if (M_alu_out == 16'h0008) begin
+            M_seg_values = 16'h8e7b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = DIV_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h8e75;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -291,10 +373,158 @@ module mojo_top_0 (
           M_alu_a[0+15-:16] = 16'h0004;
           M_alu_b[0+15-:16] = 16'h0002;
           M_alu_alufn = 6'h03;
-          if (M_counter_q[26+0-:1] == 1'h0) begin
-            if (M_alu_out == 16'h0002) begin
+          if (M_alu_out == 16'h0002) begin
+            M_seg_values = 16'h445b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = MOD_iter;
+            end
+          end else begin
+            M_seg_values = 16'h4455;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        MOD_iter: begin
+          M_alu_a[0+15-:16] = 16'h0004;
+          M_alu_b[0+15-:16] = 16'h0002;
+          M_alu_alufn = 6'h07;
+          if (M_alu_out == 16'h0000) begin
+            M_seg_values = 16'h8a4b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = OEF_iter;
+            end
+          end else begin
+            M_seg_values = 16'h8a45;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        OEF_iter: begin
+          M_alu_a[0+15-:16] = 16'hefff;
+          M_alu_b[0+15-:16] = 16'hefff;
+          M_alu_alufn = 6'h00;
+          if (M_alu_out == 16'hdffe) begin
+            M_seg_values = 16'ha5ab;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ZER_iter;
+            end
+          end else begin
+            M_seg_values = 16'ha5a5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        ZER_iter: begin
+          M_alu_a[0+15-:16] = 16'h0000;
+          M_alu_b[0+15-:16] = 16'h0000;
+          M_alu_alufn = 6'h00;
+          if (M_alu_out == 16'h0000) begin
+            M_seg_values = 16'ha00b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = NADDN_iter;
+            end
+          end else begin
+            M_seg_values = 16'ha005;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        NADDN_iter: begin
+          M_alu_a[0+15-:16] = 16'hfffc;
+          M_alu_b[0+15-:16] = 16'hfffe;
+          M_alu_alufn = 6'h00;
+          if (M_alu_out == 16'hfffa) begin
+            M_seg_values = 16'h919b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = NADDP_iter;
+            end
+          end else begin
+            M_seg_values = 16'h9195;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        NADDP_iter: begin
+          M_alu_a[0+15-:16] = 16'hfffc;
+          M_alu_b[0+15-:16] = 16'h0002;
+          M_alu_alufn = 6'h00;
+          if (M_alu_out == 16'hfffe) begin
+            M_seg_values = 16'h91bb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = NMULN_iter;
+            end
+          end else begin
+            M_seg_values = 16'h91b5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        NMULN_iter: begin
+          M_alu_a[0+15-:16] = 16'hfffc;
+          M_alu_b[0+15-:16] = 16'hfffe;
+          M_alu_alufn = 6'h02;
+          if (M_alu_out == 16'h0008) begin
+            M_seg_values = 16'h98bb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = NMULP_iter;
+            end
+          end else begin
+            M_seg_values = 16'h98b5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        NMULP_iter: begin
+          M_alu_a[0+15-:16] = 16'hfffc;
+          M_alu_b[0+15-:16] = 16'h0002;
+          M_alu_alufn = 6'h02;
+          if (M_alu_out == 16'hfff8) begin
+            M_seg_values = 16'h98bb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = NDDEN_iter;
+            end
+          end else begin
+            M_seg_values = 16'h98b5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        NDDEN_iter: begin
+          M_alu_a[0+15-:16] = 16'hfffc;
+          M_alu_b[0+15-:16] = 16'hfffe;
+          M_alu_alufn = 6'h03;
+          if (M_alu_out == 16'h0002) begin
+            M_seg_values = 16'h949b;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = NDDEP_iter;
+            end
+          end else begin
+            M_seg_values = 16'h9495;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
+              M_iter_d = ERR_iter;
+            end
+          end
+        end
+        NDDEP_iter: begin
+          M_alu_a[0+15-:16] = 16'hfffc;
+          M_alu_b[0+15-:16] = 16'h0002;
+          M_alu_alufn = 6'h03;
+          if (M_alu_out == 16'hfffe) begin
+            M_seg_values = 16'h94bb;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = PAS_iter;
-            end else begin
+            end
+          end else begin
+            M_seg_values = 16'h94b5;
+            if (M_counter_q[26+0-:1] == 1'h1) begin
               M_iter_d = ERR_iter;
             end
           end
@@ -341,7 +571,6 @@ module mojo_top_0 (
         OUTCOME_state: begin
           M_operation_d = io_dip[16+0+5-:6];
           led[5+2-:3] = 3'h7;
-          led[0+4-:5] = 5'h00;
           io_led[8+0+7-:8] = M_alu_out[8+7-:8];
           io_led[0+0+7-:8] = M_alu_out[0+7-:8];
           if (io_button[0+0-:1]) begin
@@ -356,6 +585,9 @@ module mojo_top_0 (
           end
         end
       endcase
+    end
+    if (M_counter_q[26+0-:1]) begin
+      M_counter_d[26+0-:1] = 1'h0;
     end
   end
   

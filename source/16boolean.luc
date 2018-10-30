@@ -1,4 +1,4 @@
-module boolean_16bits (
+module boolean_16bits (    // boolean module incorporates various operations listed below 
     input a[16],
     input b[16],
     input alufn[6],

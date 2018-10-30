@@ -7,6 +7,7 @@
     <src>getZVN.luc</src>
     <src>16adder.luc</src>
     <src>seven_seg.luc</src>
+    <src>16mod.luc</src>
     <src>16boolean.luc</src>
     <src>multi_seven_seg.luc</src>
     <src top="true">mojo_top.luc</src>

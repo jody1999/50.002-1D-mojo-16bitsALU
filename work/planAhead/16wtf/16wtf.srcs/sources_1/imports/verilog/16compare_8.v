@@ -6,9 +6,8 @@
 
 module compare_16bits_8 (
     input [5:0] alufn,
-    input z,
-    input v,
-    input n,
+    input [15:0] a,
+    input [15:0] b,
     output reg [15:0] out
   );
   
@@ -19,13 +18,19 @@ module compare_16bits_8 (
     
     case (alufn[1+1-:2])
       2'h1: begin
-        out[0+0-:1] = z;
+        if (a == b) begin
+          out[0+0-:1] = 1'h1;
+        end
       end
       2'h2: begin
-        out[0+0-:1] = n ^ v;
+        if (a < b) begin
+          out[0+0-:1] = 1'h1;
+        end
       end
       2'h3: begin
-        out[0+0-:1] = z | (n ^ v);
+        if (a < b | a == b) begin
+          out[0+0-:1] = 1'h1;
+        end
       end
       default: begin
         out[0+0-:1] = 1'h0;

@@ -1,19 +1,19 @@
-module mojo_top (
+module mojo_top (           //serve as testing module including auto test + manual test
     input clk,              // 50MHz clock
     input rst_n,            // reset button (active low)
    
-    output io_led[3][8],
-    input io_dip[3][8],
-    output led[8],
+    output io_led[3][8],    // initialise small LED
+    input io_dip[3][8],     // inititalise switches controlling LED
+    output led[8],          // initialise LEDs on lower layer
 
    
-    output io_seg[8],       //7 segment LEDs on IO shield
-    output io_sel[4],
-    input io_button[5]   
+    output io_seg[8],       // 7 segment LEDs on IO shield
+    output io_sel[4],       // 4 buttons
+    input io_button[5]      // 1 center button
     ) {
   
-  sig rst;  // reset signal
-  
+  sig rst;                  // reset signal
+  const TIME_INDEX = 27;
   
  .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -21,324 +21,537 @@ module mojo_top (
     reset_conditioner reset_cond;  
     
     .rst(rst){
-      dff rmba[16];
-      dff rmbb[16];
-      dff operation[6];
+      dff rmba[16];          // input a D flip flop is 16 bits wide
+      dff rmbb[16];          // input b D flip flop is 16 bits wide
+      dff operation[6];      // opcode 6 in total
       fsm state(#INIT(A), .clk(clk), .rst(rst)) = {A, B, OUTCOME}; 
-      multi_seven_seg seg;
+      multi_seven_seg seg;   //use the seven segments to show the operation name
       
-      dff counter[27]; 
-    //8 cases of truth table with one error state  
-      fsm iter= {ADD, SUB, AND, OR,XOR, LDR, SHL, SHR, SRA, CEQ, CLT, CLE,MUL,DIV,ERR,PAS}; 
+      dff counter[TIME_INDEX];      // D flip flop clock 
+      // 26 states in total, 24 operation states, 1 pass state, and 1 error state
+      fsm iter= {ADD, SUB, AND, OR,XOR, LDR, XNOR, SHL, SHR, SRA, CEQ, CLT, CLE,MUL,DIV,MOD,OEF, ZER,NADDN,NADDP,NMULN,NMULP,NDDEN,NDDEP, ERR,PAS}; 
+      // Manual & Auto States
       fsm mode= {MANUAL,AUTO};
   }
  }
   
-  //sig 
-  combinedALU alu;
+  
+    combinedALU alu;        // call combinedALU module with all the operations
   
   always {
+    
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
     
     counter.d = counter.q + 1; //next state of clock
     
-    led[7:0] = 8h00;
-    io_led[0] = 8h00;
-    io_led[1] = 8h00; 
-    io_led[2] = 8h00;   
     
-    alu.a [15:0] = rmba.q;
-    alu.b [15:0] = rmbb.q;
+    led = alu.led;
+    io_led[0] = 8h00;      // leftmost set of LEDs on IO shield
+    io_led[1] = 8h00;      // middle set of LEDs on IO shield
+    io_led[2] = 8h00;      // rightmost set of LEDs on IO shield   
     
-    alu.alufn = operation.q;
+    alu.a [15:0] = rmba.q;    // input a
+    alu.b [15:0] = rmbb.q;    // input b
+    
+    alu.alufn = operation.q;  // ALUFN contains the opcode
    
-    seg.values = {4h0, 4h0, 4h0, 4h0};
+    seg.values = {4h0, 4h0, 4h0, 4h0};    // initialise LED numbers 
     
-    io_seg = ~seg.seg;
+    io_seg = ~seg.seg;    
     io_sel = ~seg.sel;    
     seg.values = {alu.first, alu.second, alu.third, alu.fourth };
     
     case (mode.q) {
-      mode.MANUAL:
-        if (io_button[1] == 1){
-          mode.d = mode.AUTO;
+      mode.MANUAL:                            // manual mode 
+        if (io_button[1] == 1){               // press center button for auto testing 
+          mode.d = mode.AUTO;                 // set to auto mode
         }
     }
     
     // AUTO MODE
-    if (mode.q == mode.AUTO) {
-      alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002;
-      io_led[0] = alu.out[7:0];
-      io_led[1] = alu.out[15:8];
+    // Test Cases (Basic), A = 16h0004, B = 16h0002, for all cases stated below:
+    // ADD, SUB, AND, OR,XOR, LDR, XNOR, SHL, SHR, SRA, CEQ, CLT, CLE
+    // Test Cases (Extra), A = 16h0004, B = 16h0002, for all cases stated below:
+    // MUL,DIV,MOD
+    // Test Cases (Negative)
+    // NADDN: A = -4, B = -2
+    // NADDP: A = -4, B = 2
+    // NMULN: A = -4. B = -2
+    // NMULP: A = -4, B = 2
+    // NDDEN: A = -4, B = -2
+    // NDDEP: A = -4, B = 2
+    
+    // Test Cases (Overflow)
+    // OEF: A = 16hefff, B = 16hefff
+    
+    // Test Cases (Zero)
+    // ZER: A = 16h0000, B = 16h0000
+    
+       
+    if (mode.q == mode.AUTO) {            // auto mode
+      alu.a [15:0] = 16h0004;             // a = 4
+      alu.b [15:0] = 16h0002;             // b = 2
+      io_led[0] = alu.out[7:0];           // the 8 least significant bits of input
+      io_led[1] = alu.out[15:8];          // the 8 most significant bits of input
       
       case(iter.q){
               
-        iter.ADD:       
-        alu.a [15:0] = 16h0004;
-        alu.b [15:0] = 16h0002;
-        alu.alufn = 6b000000;
+        iter.ADD:                         // test ADD operation by adding a and b 
+          alu.a [15:0] = 16h0004;         // a = 4
+          alu.b [15:0] = 16h0002;         // b = 2
+          alu.alufn = 6b000000;           // opcode for ADD
+          if(alu.out == 16h0006){         // if output is expected ie. 6 
+               seg.values = {4h1,4h4,4h4,4hb};      // display A d d on LED number     
+               if (counter.q[26] == 1){      // next state
+                 iter.d = iter.SUB;
+               }
+           }else{
+               seg.values = {4h1, 4h4, 4h4, 4h5};    // to display error
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
           
-         if (counter.q[26] == 1){
-          if(alu.out == 16h0006){          
-             iter.d = iter.SUB;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
-        
+        iter.SUB:                             // test SUB operation by a minus b (subtract b from a)
+          alu.a [15:0] = 16h0004;             // a = 4
+          alu.b [15:0] = 16h0002;             // b = 2
+          alu.alufn = 6b000001;               // opcode for SUB
+          if(alu.out == 16h0002){              // if output is expected ie. 2 
+               seg.values = {4hD,4he,4h2,4hb};    // display S U b 
+               if (counter.q[26] == 1){        // next state 
+                 iter.d = iter.AND;
+               }
+           }else{
+               seg.values = {4hd, 4he, 4h2, 4h5};      // to display error
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
           
-          iter.SUB:       
-          alu.a [15:0] = 16h0004;
-          alu.b [15:0] = 16h0002;
-          alu.alufn = 6b000001;
-          
-         if (counter.q[26] == 0) {
-          if(alu.out == 16h0002){
-            iter.d = iter.AND;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.AND:       
+        iter.AND:          // test AND operation 
           alu.a [15:0] = 16h0004;
           alu.b [15:0] = 16h0002;
           alu.alufn = 6b011000;
+          if(alu.out == 16h0000){   
+               seg.values = {4h1,4h9,4h4,4hb};     // 4h1: "A", 4h9:"N", 4h4:"D"
+               if (counter.q[26] == 1){
+                 iter.d = iter.OR;
+               }
+           }else{
+               seg.values = {4h1, 4h9, 4h4, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
           
-          if (counter.q[26] == 1) {
-          if(alu.out == 16h0000){
-            iter.d = iter.OR;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.OR:       
+         iter.OR:         // test OR operation
           alu.a [15:0] = 16h0004;
-        alu.b [15:0] = 16h0002;
-        alu.alufn = 6b011110;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b011110;
+          if(alu.out == 16h0006){   
+               seg.values = {4ha,4hc,4h0,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.XOR;
+               }
+           }else{
+               seg.values = {4ha, 4hc, 4h0, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
           
-          if (counter.q[26] == 0){
-          if(alu.out == 16h0006){
-            iter.d = iter.XOR;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
+        iter.XOR:         // test XOR operation
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b010110;
+          if(alu.out == 16h0006){   
+               seg.values = {4hf,4ha,4hc,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.XNOR;
+               }
+           }else{
+               seg.values = {4hf, 4ha, 4hc, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+        iter.XNOR:         // test XNOR operation
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b011001;
+          if(alu.out == 16hfff9){   
+               seg.values = {4hf,4h9,4ha,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.LDR;
+               }
+           }else{
+               seg.values = {4hf, 4h9, 4ha, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+          
+        iter.LDR:           // test Load Relative A operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b011010;
+          if(alu.out == 16h0004){   
+               seg.values = {4h7,4h4,4hc,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.SHL;
+               }
+           }else{
+               seg.values = {4h7, 4h4, 4hc, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
         
-          
-          iter.XOR:     
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002;  
-        alu.alufn = 6b010110;
-          
-          if (counter.q[26] == 1){
-          if(alu.out == 16h0006){
-            iter.d = iter.LDR;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
-          
+        iter.SHL:       // test Shift Left operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b100000;
+          if(alu.out == 16h0010){   
+               seg.values = {4hd,4h6,4h7,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.SHR;
+               }
+           }else{
+               seg.values = {4hd, 4h6, 4h7, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
        
-          
-          iter.LDR:      
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002; 
-        alu.alufn = 6b011010;
-          
-           if (counter.q[26] == 0){
-           if(alu.out == 16h0004){
-            iter.d = iter.SHL;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
-       
-          
-          iter.SHL:    
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002;   
-        alu.alufn = 6b100000;
-          
-           if (counter.q[26] == 1){
-          if(alu.out == 16h0010){
-            iter.d = iter.SHR;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.SHR:      
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002; 
-        alu.alufn = 6b100001;
-          
-           if (counter.q[26] == 0){
-          if(alu.out == 16h0001){
-            iter.d = iter.SRA;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.SRA:      
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002; 
-        alu.alufn = 6b100011;
-          
-          if (counter.q[26] == 1){
-          if(alu.out == 16h0001){
-            iter.d = iter.CEQ;
-            }else{
-              iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.CEQ:       
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002;
-        alu.alufn = 6b110011;
-          
-          if (counter.q[26] == 0){
-          if(alu.out == 16h0000){
-            iter.d = iter.CLT;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.CLT:
-              alu.a [15:0] = 16h0004;
-      alu.b [15:0] = 16h0002;       
-        alu.alufn = 6b110101;
-          
-          if (counter.q[26] == 1){
-          if(alu.out == 16h0000){
-            iter.d = iter.CLE;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.CLE:  
+         
+       iter.SHR:       // test Shift Right operation 
         alu.a [15:0] = 16h0004;
-        alu.b [15:0] = 16h0002;     
-        alu.alufn = 6b110111;
-          if (counter.q[26] == 0){
-           if(alu.out == 16h0000){
-            iter.d = iter.MUL;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
-       
+        alu.b [15:0] = 16h0002;
+        alu.alufn = 6b100001;
+        if(alu.out == 16h0001){   
+             seg.values = {4hd,4h6,4hc,4hb};    
+             if (counter.q[26] == 1){
+               iter.d = iter.SRA;
+             }
+         }else{
+             seg.values = {4hd, 4h6, 4hc, 4h5};
+             if (counter.q[26] == 1){
+               iter.d = iter.ERR;
+             }
+       }
+        
+        iter.SRA:           // test Shift Right Arithmetic operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b100011;
+          if(alu.out == 16h0001){   
+               seg.values = {4hd,4hc,4h1,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.CEQ;
+               }
+           }else{
+               seg.values = {4hd, 4hc, 4h1, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+        
+        iter.CEQ:           // test compare if equal operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b110011;
+          if(alu.out == 16h0000){   
+               seg.values = {4h3,4h5,4ha,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.CLT;
+               }
+           }else{
+               seg.values = {4h3, 4h5, 4ha, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+        
           
-          iter.MUL:       
+        iter.CLT:           // test compare if less than operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b110101;
+          if(alu.out == 16h0000){   
+               seg.values = {4h3,4h7,4h0,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.CLE;
+               }
+           }else{
+               seg.values = {4h3, 4h7, 4h0, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+        
+        iter.CLE:             // test compare if less than equal operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b110111;
+          if(alu.out == 16h0000){   
+               seg.values = {4h3,4h7,4h5,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.MUL;
+               }
+           }else{
+               seg.values = {4h3, 4h7, 4h5, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+       iter.MUL:                   // test multplier operation 
         alu.a [15:0] = 16h0004;
         alu.b [15:0] = 16h0002;
         alu.alufn = 6b000010;
-          
-          if (counter.q[26] == 1){
-          if(alu.out == 16h0010){
-            iter.d = iter.DIV;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
-        
-          
-          iter.DIV:     
-              alu.a [15:0] = 16h0004;
-         alu.b [15:0] = 16h0002;  
+        if(alu.out == 16h0008){   
+             seg.values = {4h8,4he,4h7,4hb};    
+             if (counter.q[26] == 1){
+               iter.d = iter.DIV;
+             }
+         }else{
+             seg.values = {4h8, 4he, 4h7, 4h5};
+             if (counter.q[26] == 1){
+               iter.d = iter.ERR;
+             }
+       }
+        iter.DIV:                     // test division operation 
+        alu.a [15:0] = 16h0004;
+        alu.b [15:0] = 16h0002;
         alu.alufn = 6b000011;
-          
-          if (counter.q[26] == 0){
-          if(alu.out == 16h0002){
-            iter.d = iter.PAS;
-            }else{
-            iter.d = iter.ERR;
-            }
-          }
+        if(alu.out == 16h0002){   
+             seg.values = {4h4,4h4,4h5,4hb};    
+             if (counter.q[26] == 1){
+               iter.d = iter.MOD;
+             }
+         }else{
+             seg.values = {4h4, 4h4, 4h5, 4h5};
+             if (counter.q[26] == 1){
+               iter.d = iter.ERR;
+             }
+       }
         
+        iter.MOD:                     // test mod operation 
+          alu.a [15:0] = 16h0004;
+          alu.b [15:0] = 16h0002;
+          alu.alufn = 6b000111;
+          if(alu.out == 16h0000){   
+               seg.values = {4h8,4ha,4h4,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.OEF;
+               }
+           }else{
+               seg.values = {4h8, 4ha, 4h4, 4h5};   
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+         iter.OEF:                     // overflow case 
+          alu.a [15:0] = 16hefff;
+          alu.b [15:0] = 16hefff;
+          alu.alufn = 6b000000;
+          if(alu.out == 16hdffe){   
+               seg.values = {4ha,4h5,4ha,4hb};//showing "OEOP"
+               if (counter.q[26] == 1){
+                 iter.d = iter.ZER;
+               }
+           }else{
+               seg.values = {4ha, 4h5, 4ha, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         } 
+          iter.ZER:                     // all bits are zero 
+          alu.a [15:0] = 16h0000;
+          alu.b [15:0] = 16h0000;
+          alu.alufn = 6b000000;
+          if(alu.out == 16h0000){   
+               seg.values = {4ha,4h0,4h0,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.NADDN;
+               }
+           }else{
+               seg.values = {4ha, 4h0, 4h0, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
           
-          iter.PAS:       
-           led[2:0] = 111;
-          if (counter.q[26] == 1){
+         iter.NADDN:               // negative number add negative number 
+          alu.a [15:0] = 16hfffc;      // a = -4 
+          alu.b [15:0] = 16hfffe;      // b = -2 
+          alu.alufn = 6b000000;        // add 
+          if(alu.out == 16hfffa){      // a + b = -6
+               seg.values = {4h9,4h1,4h9,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.NADDP;
+               }
+           }else{
+               seg.values = {4h9, 4h1, 4h9, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+         
+          iter.NADDP:             // negative number add positive number 
+          alu.a [15:0] = 16hfffc;      // a = -4 
+          alu.b [15:0] = 16h0002;      // b = 2
+          alu.alufn = 6b000000;        // add 
+          if(alu.out == 16hfffe){      // a + b = -2   
+               seg.values = {4h9,4h1,4hb,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.NMULN;
+               }
+           }else{
+               seg.values = {4h9, 4h1, 4hb, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+         iter.NMULN:              // negative number multiply negative number 
+          alu.a [15:0] = 16hfffc;        // a = -4 
+          alu.b [15:0] = 16hfffe;        // b = -2 
+          alu.alufn = 6b000010;          // multiply 
+          if(alu.out == 16h0008){        // a * b = 8 
+               seg.values = {4h9,4h8,4hb,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.NMULP;
+               }
+           }else{
+               seg.values = {4h9, 4h8, 4hb, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         } 
+         iter.NMULP:           // negative number multiply by positive number 
+          alu.a [15:0] = 16hfffc;        // a = -4
+          alu.b [15:0] = 16h0002;        // b = 2
+          alu.alufn = 6b000010;          // multiply 
+          if(alu.out == 16hfff8){        // a * b = -8
+               seg.values = {4h9,4h8,4hb,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.NDDEN;
+               }
+           }else{
+               seg.values = {4h9, 4h8, 4hb, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+         iter.NDDEN:           // negative number divide by negative number 
+          alu.a [15:0] = 16hfffc;        // a = -4
+          alu.b [15:0] = 16hfffe;        // b = -2
+          alu.alufn = 6b000011;          // divide 
+          if(alu.out == 16h0002){        // a / b = 2
+               seg.values = {4h9,4h4,4h9,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.NDDEP;
+               }
+           }else{
+               seg.values = {4h9, 4h4, 4h9, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         } 
+          iter.NDDEP:                  // negative number divide by positive number 
+          alu.a [15:0] = 16hfffc;      // a = -4 
+          alu.b [15:0] = 16h0002;      // b = 2
+          alu.alufn = 6b000011;        // divide 
+          if(alu.out == 16hfffe){      // a / b = -2 
+               seg.values = {4h9,4h4,4hb,4hb};    
+               if (counter.q[26] == 1){
+                 iter.d = iter.PAS;
+               }
+           }else{
+               seg.values = {4h9, 4h4, 4hb, 4h5};
+               if (counter.q[26] == 1){
+                 iter.d = iter.ERR;
+               }
+         }
+        iter.PAS:                   // pass state 
+           led[2:0] = 111;          // light entire row of IO shield LED light 
+           if (counter.q[26] == 1){
          
             iter.d = iter.ADD;
             
           }
           
-          iter.ERR:       
-           led[2:0] = 000;
-          
+        iter.ERR:                   // error state     
+            led[2:0] = 000;
+           
         }
 
       
    }
-    else {
+    else {                    // manual input A and B to get an output 
+    
+      //MANUAL mode
+      //use io_dip[1] for reading a/b[15:8], io_dip[0] for a/b[7:0]
+      //showing the value of a/b when input and store a/b by the io_led (same index as the io_dip)
+      //
+      //press io_button[3] to transfer from state A to state B;
+      //press io_button[4] to transfer from state B to state Calculation and showing the outcome 
+      //press io_button[0] to transfer back to state A and restart the reading
+      
+      //seven_seg[3:1] showing the current input operation;
+      //seven_seg[0] not used
       case(state.q){
-        state.A:
+        state.A:              // input A 
       
-         //operation 
-        operation.d=io_dip[2][5:0];
-      
-        led[7] = 1;
-        led[6:0] = 7b0000000;
         
-        rmba.d[15:8] = io_dip[1][7:0];
+        operation.d=io_dip[2][5:0];      // input opcode 
+      
+        led[7] = 1;          // light leftmost LED below IO shield
+        led[6:0] = 7b0000000;    // keep the rest off 
+        
+        rmba.d[15:8] = io_dip[1][7:0];      // allow a to be input using the switches 
         rmba.d[7:0] = io_dip[0][7:0];
                
-        io_led[1][7:0] = io_dip[1][7:0]; 
+        io_led[1][7:0] = io_dip[1][7:0];     // connect the switches to adjacent IO shield LED lights
         io_led[0][7:0] = io_dip[0][7:0];
         io_led[2][7:0] = io_dip[2][7:0];
         
-      if(io_button[3]){
-        state.d = state.B;
+      if(io_button[3]){                         // press left button on top right corner of IO shield to input b 
+        state.d = state.B;       
       }
         
-      seg.values = {alu.first, alu.second, alu.third, alu.fourth };
+      seg.values = {alu.first, alu.second, alu.third, alu.fourth };      // denotes the LED number lights which will display name of the operations 
       
         
-      state.B:
+      state.B:                // input B 
       
-        operation.d=io_dip[2][5:0];
+        operation.d=io_dip[2][5:0];      // input opcode 
         
-        led[7:6] = 2b11;
-        led[5:0] = 6b000000;
+        led[7:6] = 2b11;                  // light the two leftmost LED below IO shield 
+        led[5:0] = 6b000000;              // keep the rest off 
         
-        rmbb.d[15:8] = io_dip[1][7:0];
+        rmbb.d[15:8] = io_dip[1][7:0];      // allow b to be input using the switches 
         rmbb.d[7:0] = io_dip[0][7:0];
           
-        io_led[1][7:0] = io_dip[1][7:0]; 
-        io_led[0][7:0] = io_dip[0][7:0];
+        io_led[1][7:0] = io_dip[1][7:0];     // connect the switches to adjacent IO shield LED lights, in this case operation has already been selected
+        io_led[0][7:0] = io_dip[0][7:0];     // over here the leftmost set of 8 IO shield switches need not be functional
         
-       if(io_button[4]){
+       if(io_button[4]){                     // press right button on top right corner of IO shield to find output 
          state.d = state.OUTCOME;
        }
         
-      state.OUTCOME:
+      state.OUTCOME:            // output 
       
-        operation.d=io_dip[2][5:0];
+        operation.d=io_dip[2][5:0];      // input opcode 
         
-        led[7:5] = 3b111;
-        led[4:0] = 5b00000;
-        
-        io_led[1][7:0] = alu.out[15:8]; 
+        led[7:5] = 3b111;          // light three leftmost LED below IO shield 
+          
+          
+        io_led[1][7:0] = alu.out[15:8];     // allow a to be input using the switches 
         io_led[0][7:0] = alu.out[7:0];
         
-        if(io_button[0]){
-          state.d = state.A;
+        if(io_button[0]){                    // press top button to perform new operation 
+          state.d = state.A;                  // reset all the lights to off 
           
           led[7:0] = 8h00;
           io_led[0] = 8h00;
@@ -352,5 +565,10 @@ module mojo_top (
           }
       }        
     }    
+    
+    if (counter.q[TIME_INDEX-1]) {
+      counter.d[TIME_INDEX-1] = 0;
+    }
+
   }  
 }

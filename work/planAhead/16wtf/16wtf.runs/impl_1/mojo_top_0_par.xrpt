@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Tue Oct 30 12:55:46 2018">
+  <application stringID="par" timeStamp="Tue Oct 30 23:15:41 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2016b\bin;C:\Program Files\dotnet\;C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\xiaomeng_wu\PycharmProjects\untitled\venv\Lib\site-packages\pydub\bin;C:\Users\xiaomeng_wu\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Apps\wget-1.19.4-win64;C:\Users\xiaomeng_wu\AppData\Local\Microsoft\WindowsApps;C:\Users\xiaomeng_wu\AppData\Local\atom\bin;C:\Users\xiaomeng_wu\Desktop\opensmile\msvcbuild;C:\Users\xiaomeng_wu\AppData\Local\GitHubDesktop\bin;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files\Java\jdk-10.0.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\wanzh\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Mojo IDE\java\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -43,13 +43,13 @@
         <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
       </item>
-      <item stringID="User_EnvHost" value="DESKTOP-AS6ELA8"/>
+      <item stringID="User_EnvHost" value="DESKTOP-MKI0O6B"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz"/>
-          <item stringID="speed" value="2400 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz"/>
+          <item stringID="speed" value="2808 MHz"/>
         </row>
       </table>
     </section>
@@ -62,12 +62,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="24 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="31 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="27 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="34 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
-        <item dataType="float" stringID="PAR_TIMING_SCORE" value="291109.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="25 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="32 secs "/>
+        <item dataType="float" stringID="PAR_TIMING_SCORE" value="783513.000000"/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="28 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="35 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -86,8 +86,8 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y11"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="48.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.613000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="66.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.624000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.050000"/>
           </row>
         </table>
@@ -1561,14 +1561,14 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Tue Oct 30 12:55:47 2018">
+  <application stringID="Par" timeStamp="Tue Oct 30 23:15:42 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2016b\bin;C:\Program Files\dotnet\;C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\xiaomeng_wu\PycharmProjects\untitled\venv\Lib\site-packages\pydub\bin;C:\Users\xiaomeng_wu\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Apps\wget-1.19.4-win64;C:\Users\xiaomeng_wu\AppData\Local\Microsoft\WindowsApps;C:\Users\xiaomeng_wu\AppData\Local\atom\bin;C:\Users\xiaomeng_wu\Desktop\opensmile\msvcbuild;C:\Users\xiaomeng_wu\AppData\Local\GitHubDesktop\bin;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files\Java\jdk-10.0.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\wanzh\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Mojo IDE\java\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -1599,28 +1599,28 @@
         <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
       </item>
-      <item stringID="User_EnvHost" value="DESKTOP-AS6ELA8"/>
+      <item stringID="User_EnvHost" value="DESKTOP-MKI0O6B"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz"/>
-          <item stringID="speed" value="2400 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz"/>
+          <item stringID="speed" value="2808 MHz"/>
         </row>
       </table>
     </section>
     <task label="Device Utilization Summary" stringID="PAR_DEVICE_UTLIZATION">
       <section stringID="PAR_SLICE_REPORTING">
-        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="67">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="67"/>
+        <item AVAILABLE="11440" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="88">
+          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="88"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="0"/>
         </item>
-        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="772">
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="25"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="636"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="109"/>
+        <item AVAILABLE="5720" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="1319">
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="28"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="1036"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="253"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -1640,15 +1640,15 @@
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="1"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="248">
-          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="97"/>
+        <item AVAILABLE="1430" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="450">
+          <item AVAILABLE="355" dataType="int" stringID="PAR_NUM_SLICEL" value="147"/>
           <item AVAILABLE="360" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="151"/>
+          <item AVAILABLE="715" dataType="int" stringID="PAR_NUM_SLICEX" value="303"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="776">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="710"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="4"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="62"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="1333">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="1248"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="14"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="71"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">
@@ -1675,7 +1675,7 @@
         <item AVAILABLE="128" dataType="int" stringID="PAR_NUM_BUFH" value="0"/>
         <item AVAILABLE="8" dataType="int" stringID="PAR_NUM_BUFPLL" value="0"/>
         <item AVAILABLE="4" dataType="int" stringID="PAR_NUM_BUFPLL_MCB" value="0"/>
-        <item AVAILABLE="16" dataType="int" stringID="PAR_NUM_DSP48A1" value="1"/>
+        <item AVAILABLE="16" dataType="int" stringID="PAR_NUM_DSP48A1" value="2"/>
         <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_GTPA1_DUAL" value="0"/>
         <item AVAILABLE="1" dataType="int" stringID="PAR_NUM_ICAP" value="0"/>
         <item AVAILABLE="2" dataType="int" stringID="PAR_NUM_MCB" value="0"/>

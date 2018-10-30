@@ -4,11 +4,11 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module adder_16bits_7 (
+module getZVN_13 (
     input [15:0] a,
     input [15:0] b,
-    input [1:0] alufn,
-    output reg [15:0] out,
+    input [5:0] alufn,
+    input [15:0] out,
     output reg z,
     output reg v,
     output reg n
@@ -16,24 +16,22 @@ module adder_16bits_7 (
   
   
   
-  reg [15:0] what;
-  
   always @* begin
+    z = 1'h0;
+    n = 1'h0;
+    v = 1'h0;
     
     case (alufn[0+0-:1])
       1'h0: begin
-        what = a + b;
+        z = (~|out);
+        n = out[15+0-:1];
+        v = (a[15+0-:1] & (!out[15+0-:1]) & b[15+0-:1]) | ((!a[15+0-:1]) & out[15+0-:1] & !b[15+0-:1]);
       end
       1'h1: begin
-        what = a - b;
-      end
-      default: begin
-        what = 1'h0;
+        z = !(out[15+0-:1]);
+        n = out[15+0-:1];
+        v = (a[15+0-:1] & (!out[15+0-:1]) & !b[15+0-:1]) | ((!a[15+0-:1]) & out[15+0-:1] & b[15+0-:1]);
       end
     endcase
-    n = what[15+0-:1];
-    v = (a[15+0-:1] & b[15+0-:1] & (~what[15+0-:1])) | ((~a[15+0-:1]) & (~b[15+0-:1]) & what[15+0-:1]);
-    z = (~|what);
-    out = what;
   end
 endmodule

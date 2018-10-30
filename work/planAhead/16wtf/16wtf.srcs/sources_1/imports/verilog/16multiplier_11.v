@@ -17,10 +17,10 @@ module multiplier_16bits_11 (
     
     case (alufn[0+5-:6])
       6'h02: begin
-        out = a * b;
+        out = $signed(a) * $signed(b);
       end
       6'h03: begin
-        out = a / b;
+        out = $signed(a) / $signed(b);
       end
       default: begin
         out = 1'h0;

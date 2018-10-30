@@ -2,8 +2,8 @@ Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.45 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -53,31 +53,33 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/seven_seg_5.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/seven_seg_5.v" into library work
 Parsing module <seven_seg_5>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/getZVN_12.v" into library work
-Parsing module <getZVN_12>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/decoder_6.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/getZVN_13.v" into library work
+Parsing module <getZVN_13>.
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/decoder_6.v" into library work
 Parsing module <decoder_6>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/counter_4.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/counter_4.v" into library work
 Parsing module <counter_4>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16shift_9.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16shift_9.v" into library work
 Parsing module <shift_16bits_9>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16multiplier_11.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16multiplier_11.v" into library work
 Parsing module <multiplier_16bits_11>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16compare_8.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16mod_12.v" into library work
+Parsing module <mod_16_12>.
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16compare_8.v" into library work
 Parsing module <compare_16bits_8>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16boolean_10.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16boolean_10.v" into library work
 Parsing module <boolean_16bits_10>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16adder_7.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16adder_7.v" into library work
 Parsing module <adder_16bits_7>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/multi_seven_seg_2.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/multi_seven_seg_2.v" into library work
 Parsing module <multi_seven_seg_2>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/combinedALU_3.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/combinedALU_3.v" into library work
 Parsing module <combinedALU_3>.
-Analyzing Verilog file "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -108,29 +110,45 @@ Elaborating module <boolean_16bits_10>.
 
 Elaborating module <multiplier_16bits_11>.
 
-Elaborating module <getZVN_12>.
-WARNING:HDLCompiler:1127 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 91: Assignment to M_alu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 92: Assignment to M_alu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 93: Assignment to M_alu_n ignored, since the identifier is never used
-WARNING:HDLCompiler:413 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 303: Result of 7-bit expression is truncated to fit in 3-bit target.
+Elaborating module <mod_16_12>.
+
+Elaborating module <getZVN_13>.
+WARNING:HDLCompiler:1127 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 104: Assignment to M_alu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 105: Assignment to M_alu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 106: Assignment to M_alu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 533: Result of 7-bit expression is truncated to fit in 3-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_button<2:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" line 82: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" line 82: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" line 82: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" line 95: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" line 95: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/mojo_top_0.v" line 95: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <M_rmba_q>.
     Found 16-bit register for signal <M_rmbb_q>.
     Found 6-bit register for signal <M_operation_q>.
     Found 27-bit register for signal <M_counter_q>.
-    Found 4-bit register for signal <M_iter_q>.
+    Found 5-bit register for signal <M_iter_q>.
     Found 1-bit register for signal <M_mode_q>.
     Found 2-bit register for signal <M_state_q>.
+    Found finite state machine <FSM_0> for signal <M_iter_q>.
+    -----------------------------------------------------------------------
+    | States             | 26                                             |
+    | Transitions        | 100                                            |
+    | Inputs             | 14                                             |
+    | Outputs            | 37                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | M_reset_cond_out (positive)                    |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000                                          |
+    | Power Up State     | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
     Found finite state machine <FSM_1> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
@@ -145,38 +163,26 @@ INFO:Xst:3210 - "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_0> for signal <M_iter_q>.
-    -----------------------------------------------------------------------
-    | States             | 16                                             |
-    | Transitions        | 60                                             |
-    | Inputs             | 8                                              |
-    | Outputs            | 7                                              |
-    | Clock              | clk (rising_edge)                              |
-    | Reset              | M_reset_cond_out (positive)                    |
-    | Reset type         | synchronous                                    |
-    | Reset State        | 0000                                           |
-    | Power Up State     | 0000                                           |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 27-bit adder for signal <M_counter_d> created at line 107.
-    Found 24-bit 4-to-1 multiplexer for signal <M_state_q[1]_GND_1_o_wide_mux_76_OUT> created at line 314.
+    Found 27-bit adder for signal <M_counter_d> created at line 121.
+    Found 16-bit 25-to-1 multiplexer for signal <M_iter_q[4]_M_alu_first[3]_wide_mux_183_OUT> created at line 147.
+    Found 8-bit 4-to-1 multiplexer for signal <M_state_q[1]_M_alu_led[7]_wide_mux_190_OUT> created at line 544.
+    Found 24-bit 4-to-1 multiplexer for signal <M_state_q[1]_GND_1_o_wide_mux_191_OUT> created at line 544.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  66 D-type flip-flop(s).
-	inferred   7 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 	inferred   2 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <reset_conditioner_1>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
 Synthesizing Unit <multi_seven_seg_2>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/multi_seven_seg_2.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/multi_seven_seg_2.v".
     Found 4-bit adder for signal <M_ctr_value[1]_GND_3_o_add_0_OUT> created at line 48.
     Found 31-bit shifter logical right for signal <n0010> created at line 48
     Summary:
@@ -185,7 +191,7 @@ Synthesizing Unit <multi_seven_seg_2>.
 Unit <multi_seven_seg_2> synthesized.
 
 Synthesizing Unit <counter_4>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/counter_4.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/counter_4.v".
     Found 18-bit register for signal <M_ctr_q>.
     Found 18-bit adder for signal <M_ctr_q[17]_GND_4_o_add_0_OUT> created at line 35.
     Summary:
@@ -195,43 +201,48 @@ Synthesizing Unit <counter_4>.
 Unit <counter_4> synthesized.
 
 Synthesizing Unit <seven_seg_5>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/seven_seg_5.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/seven_seg_5.v".
     Found 16x7-bit Read Only RAM for signal <segs>
     Summary:
 	inferred   1 RAM(s).
 Unit <seven_seg_5> synthesized.
 
 Synthesizing Unit <decoder_6>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/decoder_6.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/decoder_6.v".
     Summary:
 	no macro.
 Unit <decoder_6> synthesized.
 
 Synthesizing Unit <combinedALU_3>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/combinedALU_3.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/combinedALU_3.v".
+WARNING:Xst:653 - Signal <led<7:3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
-	inferred   7 Multiplexer(s).
+	inferred  11 Multiplexer(s).
 Unit <combinedALU_3> synthesized.
 
 Synthesizing Unit <adder_16bits_7>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16adder_7.v".
-    Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 23.
-    Found 16-bit adder for signal <a[15]_b[15]_add_0_OUT> created at line 20.
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16adder_7.v".
+WARNING:Xst:647 - Input <alufn<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 28.
+    Found 16-bit adder for signal <a[15]_b[15]_add_0_OUT> created at line 25.
     Summary:
-	inferred   2 Adder/Subtractor(s).
+	inferred   1 Adder/Subtractor(s).
 Unit <adder_16bits_7> synthesized.
 
 Synthesizing Unit <compare_16bits_8>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16compare_8.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16compare_8.v".
 WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 16-bit 4-to-1 multiplexer for signal <out> created at line 20.
+    Found 16-bit 4-to-1 multiplexer for signal <out> created at line 19.
+    Found 16-bit comparator greater for signal <a[15]_b[15]_LessThan_5_o> created at line 31
+    Found 16-bit comparator equal for signal <a[15]_b[15]_equal_6_o> created at line 31
     Summary:
+	inferred   2 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <compare_16bits_8> synthesized.
 
 Synthesizing Unit <shift_16bits_9>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16shift_9.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16shift_9.v".
 WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit shifter logical left for signal <a[15]_b[3]_shift_left_0_OUT> created at line 20
@@ -244,52 +255,124 @@ WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved 
 Unit <shift_16bits_9> synthesized.
 
 Synthesizing Unit <boolean_16bits_10>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16boolean_10.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16boolean_10.v".
 WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 Unit <boolean_16bits_10> synthesized.
 
 Synthesizing Unit <multiplier_16bits_11>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16multiplier_11.v".
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16multiplier_11.v".
     Found 16x16-bit multiplier for signal <n0010> created at line 20.
     Summary:
 	inferred   1 Multiplier(s).
 Unit <multiplier_16bits_11> synthesized.
 
+Synthesizing Unit <div_16s_16s>.
+    Related source file is "".
+    Found 16-bit subtractor for signal <a[15]_unary_minus_1_OUT> created at line 0.
+    Found 16-bit subtractor for signal <b[15]_unary_minus_3_OUT> created at line 0.
+    Found 32-bit adder for signal <n1002> created at line 0.
+    Found 32-bit adder for signal <GND_14_o_b[15]_add_5_OUT> created at line 0.
+    Found 31-bit adder for signal <n1006> created at line 0.
+    Found 31-bit adder for signal <GND_14_o_b[15]_add_7_OUT> created at line 0.
+    Found 30-bit adder for signal <n1010> created at line 0.
+    Found 30-bit adder for signal <GND_14_o_b[15]_add_9_OUT> created at line 0.
+    Found 29-bit adder for signal <n1014> created at line 0.
+    Found 29-bit adder for signal <GND_14_o_b[15]_add_11_OUT> created at line 0.
+    Found 28-bit adder for signal <n1018> created at line 0.
+    Found 28-bit adder for signal <GND_14_o_b[15]_add_13_OUT> created at line 0.
+    Found 27-bit adder for signal <n1022> created at line 0.
+    Found 27-bit adder for signal <GND_14_o_b[15]_add_15_OUT> created at line 0.
+    Found 26-bit adder for signal <n1026> created at line 0.
+    Found 26-bit adder for signal <GND_14_o_b[15]_add_17_OUT> created at line 0.
+    Found 25-bit adder for signal <n1030> created at line 0.
+    Found 25-bit adder for signal <GND_14_o_b[15]_add_19_OUT> created at line 0.
+    Found 24-bit adder for signal <n1034> created at line 0.
+    Found 24-bit adder for signal <GND_14_o_b[15]_add_21_OUT> created at line 0.
+    Found 23-bit adder for signal <n1038> created at line 0.
+    Found 23-bit adder for signal <GND_14_o_b[15]_add_23_OUT> created at line 0.
+    Found 22-bit adder for signal <n1042> created at line 0.
+    Found 22-bit adder for signal <GND_14_o_b[15]_add_25_OUT> created at line 0.
+    Found 21-bit adder for signal <n1046> created at line 0.
+    Found 21-bit adder for signal <GND_14_o_b[15]_add_27_OUT> created at line 0.
+    Found 20-bit adder for signal <n1050> created at line 0.
+    Found 20-bit adder for signal <GND_14_o_b[15]_add_29_OUT> created at line 0.
+    Found 19-bit adder for signal <n1054> created at line 0.
+    Found 19-bit adder for signal <GND_14_o_b[15]_add_31_OUT> created at line 0.
+    Found 18-bit adder for signal <n1058> created at line 0.
+    Found 18-bit adder for signal <GND_14_o_b[15]_add_33_OUT> created at line 0.
+    Found 17-bit adder for signal <n1062> created at line 0.
+    Found 17-bit adder for signal <GND_14_o_b[15]_add_35_OUT> created at line 0.
+    Found 17-bit adder for signal <GND_14_o_BUS_0001_add_38_OUT[16:0]> created at line 0.
+    Found 32-bit comparator greater for signal <BUS_0001_INV_500_o> created at line 0
+    Found 31-bit comparator greater for signal <BUS_0002_INV_499_o> created at line 0
+    Found 30-bit comparator greater for signal <BUS_0003_INV_498_o> created at line 0
+    Found 29-bit comparator greater for signal <BUS_0004_INV_497_o> created at line 0
+    Found 28-bit comparator greater for signal <BUS_0005_INV_496_o> created at line 0
+    Found 27-bit comparator greater for signal <BUS_0006_INV_495_o> created at line 0
+    Found 26-bit comparator greater for signal <BUS_0007_INV_494_o> created at line 0
+    Found 25-bit comparator greater for signal <BUS_0008_INV_493_o> created at line 0
+    Found 24-bit comparator greater for signal <BUS_0009_INV_492_o> created at line 0
+    Found 23-bit comparator greater for signal <BUS_0010_INV_491_o> created at line 0
+    Found 22-bit comparator greater for signal <BUS_0011_INV_490_o> created at line 0
+    Found 21-bit comparator greater for signal <BUS_0012_INV_489_o> created at line 0
+    Found 20-bit comparator greater for signal <BUS_0013_INV_488_o> created at line 0
+    Found 19-bit comparator greater for signal <BUS_0014_INV_487_o> created at line 0
+    Found 18-bit comparator greater for signal <BUS_0015_INV_486_o> created at line 0
+    Found 17-bit comparator greater for signal <BUS_0016_INV_485_o> created at line 0
+    Found 16-bit comparator greater for signal <BUS_0017_INV_484_o> created at line 0
+    Summary:
+	inferred  35 Adder/Subtractor(s).
+	inferred  17 Comparator(s).
+	inferred 244 Multiplexer(s).
+Unit <div_16s_16s> synthesized.
+
+Synthesizing Unit <mod_16_12>.
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/16mod_12.v".
+    Found 16-bit subtractor for signal <a[15]_a[15]_sub_4_OUT> created at line 23.
+    Found 16x16-bit multiplier for signal <n0012> created at line 23.
+    Found 16-bit comparator greater for signal <a[15]_b[15]_LessThan_1_o> created at line 20
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <mod_16_12> synthesized.
+
 Synthesizing Unit <div_16u_16u>.
     Related source file is "".
     Found 32-bit adder for signal <n0956> created at line 0.
-    Found 32-bit adder for signal <GND_14_o_b[15]_add_1_OUT> created at line 0.
+    Found 32-bit adder for signal <GND_17_o_b[15]_add_1_OUT> created at line 0.
     Found 31-bit adder for signal <n0960> created at line 0.
-    Found 31-bit adder for signal <GND_14_o_b[15]_add_3_OUT> created at line 0.
+    Found 31-bit adder for signal <GND_17_o_b[15]_add_3_OUT> created at line 0.
     Found 30-bit adder for signal <n0964> created at line 0.
-    Found 30-bit adder for signal <GND_14_o_b[15]_add_5_OUT> created at line 0.
+    Found 30-bit adder for signal <GND_17_o_b[15]_add_5_OUT> created at line 0.
     Found 29-bit adder for signal <n0968> created at line 0.
-    Found 29-bit adder for signal <GND_14_o_b[15]_add_7_OUT> created at line 0.
+    Found 29-bit adder for signal <GND_17_o_b[15]_add_7_OUT> created at line 0.
     Found 28-bit adder for signal <n0972> created at line 0.
-    Found 28-bit adder for signal <GND_14_o_b[15]_add_9_OUT> created at line 0.
+    Found 28-bit adder for signal <GND_17_o_b[15]_add_9_OUT> created at line 0.
     Found 27-bit adder for signal <n0976> created at line 0.
-    Found 27-bit adder for signal <GND_14_o_b[15]_add_11_OUT> created at line 0.
+    Found 27-bit adder for signal <GND_17_o_b[15]_add_11_OUT> created at line 0.
     Found 26-bit adder for signal <n0980> created at line 0.
-    Found 26-bit adder for signal <GND_14_o_b[15]_add_13_OUT> created at line 0.
+    Found 26-bit adder for signal <GND_17_o_b[15]_add_13_OUT> created at line 0.
     Found 25-bit adder for signal <n0984> created at line 0.
-    Found 25-bit adder for signal <GND_14_o_b[15]_add_15_OUT> created at line 0.
+    Found 25-bit adder for signal <GND_17_o_b[15]_add_15_OUT> created at line 0.
     Found 24-bit adder for signal <n0988> created at line 0.
-    Found 24-bit adder for signal <GND_14_o_b[15]_add_17_OUT> created at line 0.
+    Found 24-bit adder for signal <GND_17_o_b[15]_add_17_OUT> created at line 0.
     Found 23-bit adder for signal <n0992> created at line 0.
-    Found 23-bit adder for signal <GND_14_o_b[15]_add_19_OUT> created at line 0.
+    Found 23-bit adder for signal <GND_17_o_b[15]_add_19_OUT> created at line 0.
     Found 22-bit adder for signal <n0996> created at line 0.
-    Found 22-bit adder for signal <GND_14_o_b[15]_add_21_OUT> created at line 0.
+    Found 22-bit adder for signal <GND_17_o_b[15]_add_21_OUT> created at line 0.
     Found 21-bit adder for signal <n1000> created at line 0.
-    Found 21-bit adder for signal <GND_14_o_b[15]_add_23_OUT> created at line 0.
+    Found 21-bit adder for signal <GND_17_o_b[15]_add_23_OUT> created at line 0.
     Found 20-bit adder for signal <n1004> created at line 0.
-    Found 20-bit adder for signal <GND_14_o_b[15]_add_25_OUT> created at line 0.
+    Found 20-bit adder for signal <GND_17_o_b[15]_add_25_OUT> created at line 0.
     Found 19-bit adder for signal <n1008> created at line 0.
-    Found 19-bit adder for signal <GND_14_o_b[15]_add_27_OUT> created at line 0.
+    Found 19-bit adder for signal <GND_17_o_b[15]_add_27_OUT> created at line 0.
     Found 18-bit adder for signal <n1012> created at line 0.
-    Found 18-bit adder for signal <GND_14_o_b[15]_add_29_OUT> created at line 0.
+    Found 18-bit adder for signal <GND_17_o_b[15]_add_29_OUT> created at line 0.
     Found 17-bit adder for signal <n1016> created at line 0.
-    Found 17-bit adder for signal <GND_14_o_b[15]_add_31_OUT> created at line 0.
+    Found 17-bit adder for signal <GND_17_o_b[15]_add_31_OUT> created at line 0.
     Found 32-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 31-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 30-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -313,13 +396,14 @@ Synthesizing Unit <div_16u_16u>.
 	inferred 241 Multiplexer(s).
 Unit <div_16u_16u> synthesized.
 
-Synthesizing Unit <getZVN_12>.
-    Related source file is "C:/Users/xiaomeng_wu/Desktop/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/getZVN_12.v".
+Synthesizing Unit <getZVN_13>.
+    Related source file is "C:/Users/wanzh/Documents/mojo/led16 morning/work/planAhead/16wtf/16wtf.srcs/sources_1/imports/verilog/getZVN_13.v".
 WARNING:Xst:647 - Input <a<14:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <b<14:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
-Unit <getZVN_12> synthesized.
+	inferred   2 Multiplexer(s).
+Unit <getZVN_13> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -327,27 +411,27 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  16x7-bit single-port Read Only RAM                    : 1
-# Multipliers                                          : 1
- 16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 37
- 16-bit adder                                          : 1
- 16-bit subtractor                                     : 1
- 17-bit adder                                          : 2
- 18-bit adder                                          : 3
- 19-bit adder                                          : 2
- 20-bit adder                                          : 2
- 21-bit adder                                          : 2
- 22-bit adder                                          : 2
- 23-bit adder                                          : 2
- 24-bit adder                                          : 2
- 25-bit adder                                          : 2
- 26-bit adder                                          : 2
- 27-bit adder                                          : 3
- 28-bit adder                                          : 2
- 29-bit adder                                          : 2
- 30-bit adder                                          : 2
- 31-bit adder                                          : 2
- 32-bit adder                                          : 2
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 72
+ 16-bit addsub                                         : 1
+ 16-bit subtractor                                     : 3
+ 17-bit adder                                          : 5
+ 18-bit adder                                          : 5
+ 19-bit adder                                          : 4
+ 20-bit adder                                          : 4
+ 21-bit adder                                          : 4
+ 22-bit adder                                          : 4
+ 23-bit adder                                          : 4
+ 24-bit adder                                          : 4
+ 25-bit adder                                          : 4
+ 26-bit adder                                          : 4
+ 27-bit adder                                          : 5
+ 28-bit adder                                          : 4
+ 29-bit adder                                          : 4
+ 30-bit adder                                          : 4
+ 31-bit adder                                          : 4
+ 32-bit adder                                          : 4
  4-bit adder                                           : 1
 # Registers                                            : 7
  1-bit register                                        : 1
@@ -356,42 +440,63 @@ Macro Statistics
  27-bit register                                       : 1
  4-bit register                                        : 1
  6-bit register                                        : 1
-# Comparators                                          : 17
+# Comparators                                          : 37
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 3
  16-bit comparator lessequal                           : 1
+ 17-bit comparator greater                             : 1
  17-bit comparator lessequal                           : 1
+ 18-bit comparator greater                             : 1
  18-bit comparator lessequal                           : 1
+ 19-bit comparator greater                             : 1
  19-bit comparator lessequal                           : 1
+ 20-bit comparator greater                             : 1
  20-bit comparator lessequal                           : 1
+ 21-bit comparator greater                             : 1
  21-bit comparator lessequal                           : 1
+ 22-bit comparator greater                             : 1
  22-bit comparator lessequal                           : 1
+ 23-bit comparator greater                             : 1
  23-bit comparator lessequal                           : 1
+ 24-bit comparator greater                             : 1
  24-bit comparator lessequal                           : 1
+ 25-bit comparator greater                             : 1
  25-bit comparator lessequal                           : 1
+ 26-bit comparator greater                             : 1
  26-bit comparator lessequal                           : 1
+ 27-bit comparator greater                             : 1
  27-bit comparator lessequal                           : 1
+ 28-bit comparator greater                             : 1
  28-bit comparator lessequal                           : 1
+ 29-bit comparator greater                             : 1
  29-bit comparator lessequal                           : 1
+ 30-bit comparator greater                             : 1
  30-bit comparator lessequal                           : 1
+ 31-bit comparator greater                             : 1
  31-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 258
- 1-bit 2-to-1 multiplexer                              : 240
- 16-bit 2-to-1 multiplexer                             : 6
+# Multiplexers                                         : 521
+ 1-bit 2-to-1 multiplexer                              : 495
+ 16-bit 2-to-1 multiplexer                             : 10
+ 16-bit 25-to-1 multiplexer                            : 1
  16-bit 4-to-1 multiplexer                             : 2
+ 17-bit 2-to-1 multiplexer                             : 1
  18-bit 2-to-1 multiplexer                             : 1
  24-bit 2-to-1 multiplexer                             : 2
  24-bit 4-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 4
  6-bit 2-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+ 8-bit 4-to-1 multiplexer                              : 1
 # Logic shifters                                       : 4
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
  31-bit shifter logical right                          : 1
 # FSMs                                                 : 2
-# Xors                                                 : 3
- 1-bit xor2                                            : 2
+# Xors                                                 : 2
+ 1-bit xor2                                            : 1
  16-bit xor2                                           : 1
 
 =========================================================================
@@ -405,9 +510,9 @@ Synthesizing (advanced) Unit <counter_4>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <counter_4> synthesized (advanced).
 
-Synthesizing (advanced) Unit <mojo_top_0>.
-The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
-Unit <mojo_top_0> synthesized (advanced).
+Synthesizing (advanced) Unit <mod_16_12>.
+	Multiplier <Mmult_n0012> in block <mod_16_12> and adder/subtractor <Msub_a[15]_a[15]_sub_4_OUT> in block <mod_16_12> are combined into a MAC<Maddsub_n0012>.
+Unit <mod_16_12> synthesized (advanced).
 
 Synthesizing (advanced) Unit <seven_seg_5>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -429,53 +534,77 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  16x7-bit single-port distributed Read Only RAM        : 1
+# MACs                                                 : 1
+ 16x16-to-16-bit MAC                                   : 1
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 19
- 16-bit adder                                          : 1
- 16-bit adder carry in                                 : 16
- 16-bit subtractor                                     : 1
+# Adders/Subtractors                                   : 38
+ 16-bit adder carry in                                 : 32
+ 16-bit addsub                                         : 1
+ 16-bit subtractor                                     : 2
+ 17-bit adder                                          : 1
+ 27-bit adder                                          : 1
  4-bit adder                                           : 1
-# Counters                                             : 2
+# Counters                                             : 1
  18-bit up counter                                     : 1
- 27-bit up counter                                     : 1
-# Registers                                            : 43
- Flip-Flops                                            : 43
-# Comparators                                          : 17
+# Registers                                            : 70
+ Flip-Flops                                            : 70
+# Comparators                                          : 37
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 3
  16-bit comparator lessequal                           : 1
+ 17-bit comparator greater                             : 1
  17-bit comparator lessequal                           : 1
+ 18-bit comparator greater                             : 1
  18-bit comparator lessequal                           : 1
+ 19-bit comparator greater                             : 1
  19-bit comparator lessequal                           : 1
+ 20-bit comparator greater                             : 1
  20-bit comparator lessequal                           : 1
+ 21-bit comparator greater                             : 1
  21-bit comparator lessequal                           : 1
+ 22-bit comparator greater                             : 1
  22-bit comparator lessequal                           : 1
+ 23-bit comparator greater                             : 1
  23-bit comparator lessequal                           : 1
+ 24-bit comparator greater                             : 1
  24-bit comparator lessequal                           : 1
+ 25-bit comparator greater                             : 1
  25-bit comparator lessequal                           : 1
+ 26-bit comparator greater                             : 1
  26-bit comparator lessequal                           : 1
+ 27-bit comparator greater                             : 1
  27-bit comparator lessequal                           : 1
+ 28-bit comparator greater                             : 1
  28-bit comparator lessequal                           : 1
+ 29-bit comparator greater                             : 1
  29-bit comparator lessequal                           : 1
+ 30-bit comparator greater                             : 1
  30-bit comparator lessequal                           : 1
+ 31-bit comparator greater                             : 1
  31-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 257
- 1-bit 2-to-1 multiplexer                              : 240
- 16-bit 2-to-1 multiplexer                             : 6
+# Multiplexers                                         : 520
+ 1-bit 2-to-1 multiplexer                              : 495
+ 16-bit 2-to-1 multiplexer                             : 10
+ 16-bit 25-to-1 multiplexer                            : 1
  16-bit 4-to-1 multiplexer                             : 2
+ 17-bit 2-to-1 multiplexer                             : 1
  24-bit 2-to-1 multiplexer                             : 2
  24-bit 4-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 4
  6-bit 2-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+ 8-bit 4-to-1 multiplexer                              : 1
 # Logic shifters                                       : 4
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
  31-bit shifter logical right                          : 1
 # FSMs                                                 : 2
-# Xors                                                 : 3
- 1-bit xor2                                            : 2
+# Xors                                                 : 2
+ 1-bit xor2                                            : 1
  16-bit xor2                                           : 1
 
 =========================================================================
@@ -483,6 +612,38 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <M_iter_q[1:5]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 00000
+ 11000 | 00001
+ 00001 | 00010
+ 00010 | 00011
+ 00011 | 00100
+ 00100 | 00101
+ 00110 | 00110
+ 00111 | 00111
+ 00101 | 01000
+ 01000 | 01001
+ 01001 | 01010
+ 01010 | 01011
+ 01011 | 01100
+ 01100 | 01101
+ 01101 | 01110
+ 01110 | 01111
+ 01111 | 10000
+ 10000 | 10001
+ 10001 | 10010
+ 10010 | 10011
+ 10011 | 10100
+ 10100 | 10101
+ 10101 | 10110
+ 10110 | 10111
+ 10111 | 11000
+ 11001 | 11001
+-------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_1> on signal <M_state_q[1:2]> with user encoding.
 -------------------
@@ -492,38 +653,10 @@ Optimizing FSM <FSM_1> on signal <M_state_q[1:2]> with user encoding.
  01    | 01
  10    | 10
 -------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <M_iter_q[1:4]> with user encoding.
--------------------
- State | Encoding
--------------------
- 0000  | 0000
- 1110  | 1110
- 0001  | 0001
- 0010  | 0010
- 0011  | 0011
- 0100  | 0100
- 0101  | 0101
- 0110  | 0110
- 0111  | 0111
- 1000  | 1000
- 1001  | 1001
- 1010  | 1010
- 1011  | 1011
- 1100  | 1100
- 1101  | 1101
- 1111  | 1111
--------------------
 
 Optimizing unit <mojo_top_0> ...
 
 Optimizing unit <combinedALU_3> ...
-
-Optimizing unit <adder_16bits_7> ...
-
-Optimizing unit <multiplier_16bits_11> ...
-
-Optimizing unit <div_16u_16u> ...
 INFO:Xst:2261 - The FF/Latch <M_counter_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_10> 
 INFO:Xst:2261 - The FF/Latch <M_counter_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_11> 
 INFO:Xst:2261 - The FF/Latch <M_counter_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <seg/ctr/M_ctr_q_12> 
@@ -545,18 +678,17 @@ INFO:Xst:2261 - The FF/Latch <M_counter_q_9> in Unit <mojo_top_0> is equivalent 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 15.
-FlipFlop M_mode_q has been replicated 3 time(s)
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 28.
+FlipFlop M_iter_q_FSM_FFd1 has been replicated 6 time(s)
+FlipFlop M_iter_q_FSM_FFd2 has been replicated 4 time(s)
+FlipFlop M_iter_q_FSM_FFd3 has been replicated 3 time(s)
+FlipFlop M_iter_q_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop M_iter_q_FSM_FFd5 has been replicated 3 time(s)
+FlipFlop M_mode_q has been replicated 8 time(s)
 FlipFlop M_rmba_q_15 has been replicated 2 time(s)
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop M_rmba_q_15 connected to a primary input has been replicated
-FlipFlop M_rmbb_q_0 has been replicated 2 time(s)
-INFO:Xst:1843 - HDL ADVISOR - FlipFlop M_rmbb_q_0 connected to a primary input has been replicated
-FlipFlop M_rmbb_q_1 has been replicated 2 time(s)
-INFO:Xst:1843 - HDL ADVISOR - FlipFlop M_rmbb_q_1 connected to a primary input has been replicated
-FlipFlop M_rmbb_q_2 has been replicated 2 time(s)
-INFO:Xst:1843 - HDL ADVISOR - FlipFlop M_rmbb_q_2 connected to a primary input has been replicated
-FlipFlop M_rmbb_q_3 has been replicated 2 time(s)
-INFO:Xst:1843 - HDL ADVISOR - FlipFlop M_rmbb_q_3 connected to a primary input has been replicated
+FlipFlop M_rmbb_q_15 has been replicated 5 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop M_rmbb_q_15 connected to a primary input has been replicated
 
 Final Macro Processing ...
 
@@ -568,8 +700,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 89
- Flip-Flops                                            : 89
+# Registers                                            : 110
+ Flip-Flops                                            : 110
 
 =========================================================================
 
@@ -592,30 +724,30 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1310
-#      GND                         : 6
-#      INV                         : 2
-#      LUT1                        : 26
-#      LUT2                        : 53
-#      LUT3                        : 89
-#      LUT4                        : 182
-#      LUT5                        : 145
-#      LUT6                        : 371
-#      MUXCY                       : 243
-#      MUXF7                       : 24
-#      VCC                         : 5
-#      XORCY                       : 164
-# FlipFlops/Latches                : 89
-#      FDR                         : 37
-#      FDRE                        : 48
+# BELS                             : 2289
+#      GND                         : 7
+#      INV                         : 13
+#      LUT1                        : 28
+#      LUT2                        : 17
+#      LUT3                        : 140
+#      LUT4                        : 369
+#      LUT5                        : 408
+#      LUT6                        : 529
+#      MUXCY                       : 465
+#      MUXF7                       : 5
+#      VCC                         : 7
+#      XORCY                       : 301
+# FlipFlops/Latches                : 110
+#      FDR                         : 61
+#      FDRE                        : 45
 #      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 73
 #      IBUF                        : 29
 #      OBUF                        : 44
-# DSPs                             : 1
-#      DSP48A1                     : 1
+# DSPs                             : 2
+#      DSP48A1                     : 2
 
 Device utilization summary:
 ---------------------------
@@ -624,15 +756,15 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              89  out of  11440     0%  
- Number of Slice LUTs:                  868  out of   5720    15%  
-    Number used as Logic:               868  out of   5720    15%  
+ Number of Slice Registers:             110  out of  11440     0%  
+ Number of Slice LUTs:                 1504  out of   5720    26%  
+    Number used as Logic:              1504  out of   5720    26%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    881
-   Number with an unused Flip Flop:     792  out of    881    89%  
-   Number with an unused LUT:            13  out of    881     1%  
-   Number of fully used LUT-FF pairs:    76  out of    881     8%  
+ Number of LUT Flip Flop pairs used:   1555
+   Number with an unused Flip Flop:    1445  out of   1555    92%  
+   Number with an unused LUT:            51  out of   1555     3%  
+   Number of fully used LUT-FF pairs:    59  out of   1555     3%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -641,7 +773,7 @@ IO Utilization:
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
- Number of DSP48A1s:                      1  out of     16     6%  
+ Number of DSP48A1s:                      2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -664,7 +796,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 89    |
+clk                                | BUFGP                  | 110   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -675,10 +807,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 54.595ns (Maximum Frequency: 18.317MHz)
+   Minimum period: 64.932ns (Maximum Frequency: 15.401MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 58.337ns
-   Maximum combinational path delay: 6.670ns
+   Maximum output required time after clock: 71.811ns
+   Maximum combinational path delay: 10.692ns
 
 Timing Details:
 ---------------
@@ -686,112 +818,109 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 54.595ns (frequency: 18.317MHz)
-  Total number of paths / destination ports: 905971411871546740000 / 173
+  Clock period: 64.932ns (frequency: 15.401MHz)
+  Total number of paths / destination ports: 7357380245886317900000000 / 215
 -------------------------------------------------------------------------
-Delay:               54.595ns (Levels of Logic = 113)
-  Source:            M_mode_q_1 (FF)
+Delay:               64.932ns (Levels of Logic = 114)
+  Source:            M_iter_q_FSM_FFd3_1 (FF)
   Destination:       M_iter_q_FSM_FFd4 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: M_mode_q_1 to M_iter_q_FSM_FFd4
+  Data Path: M_iter_q_FSM_FFd3_1 to M_iter_q_FSM_FFd4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             16   0.525   1.182  M_mode_q_1 (M_mode_q_1)
-     LUT2:I1->O           16   0.254   1.612  Mmux_M_alu_b51 (M_alu_b<13>)
-     begin scope: 'alu:M_alu_b<13>'
-     begin scope: 'alu/mul:b<13>'
-     begin scope: 'alu/mul/a[15]_b[15]_div_1:b<13>'
-     LUT6:I1->O           15   0.254   1.263  o<15>221 (o<15>221)
-     LUT6:I4->O            3   0.250   0.766  Mmux_a[0]_GND_14_o_MUX_418_o161 (a[15]_GND_14_o_MUX_403_o)
-     LUT6:I5->O            6   0.254   0.876  Mmux_a[0]_GND_14_o_MUX_478_o151 (a[14]_GND_14_o_MUX_464_o)
-     LUT6:I5->O            6   0.254   1.152  Mmux_a[0]_GND_14_o_MUX_536_o141 (a[13]_GND_14_o_MUX_523_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<12>_lutdi (Mcompar_o<12>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<12>_cy<0> (Mcompar_o<12>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<12>_cy<1> (Mcompar_o<12>_cy<1>)
+     FDR:C->Q              3   0.525   1.196  M_iter_q_FSM_FFd3_1 (M_iter_q_FSM_FFd3_1)
+     LUT5:I0->O            2   0.254   0.726  _n0397<17>1_1 (_n0397<17>1)
+     LUT3:I2->O            3   0.254   1.196  Mmux_M_alu_b81_1 (Mmux_M_alu_b81)
+     begin scope: 'alu:Mmux_M_alu_b81'
+     begin scope: 'alu/mod:Mmux_M_alu_b81'
+     LUT6:I1->O            2   0.254   0.726  a[15]_b[15]_div_1_OUT<15>2 (a[15]_b[15]_div_1_OUT<15>)
+     begin scope: 'alu/mod/a[15]_b[15]_div_1:a[15]_b[15]_div_1_OUT<15>'
+     LUT6:I5->O            4   0.254   0.912  Mmux_a[0]_GND_17_o_MUX_1235_o161 (a[15]_GND_17_o_MUX_1220_o)
+     end scope: 'alu/mod/a[15]_b[15]_div_1:a[15]_GND_17_o_MUX_1220_o'
+     LUT4:I2->O            4   0.250   0.804  a[15]_b[15]_div_1_OUT<13>31 (a[15]_b[15]_div_1_OUT<13>)
+     begin scope: 'alu/mod/a[15]_b[15]_div_1:a[15]_b[15]_div_1_OUT<13>'
+     LUT6:I5->O            4   0.254   1.080  Mmux_a[0]_GND_17_o_MUX_1264_o151 (a[14]_GND_17_o_MUX_1250_o)
+     LUT5:I1->O            1   0.254   0.000  Mcompar_o<12>_lut<1> (Mcompar_o<12>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<12>_cy<1> (Mcompar_o<12>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<12>_cy<2> (Mcompar_o<12>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<12>_cy<3> (Mcompar_o<12>_cy<3>)
-     MUXCY:CI->O          10   0.235   1.008  Mcompar_o<12>_cy<4> (o<12>)
-     LUT6:I5->O            8   0.254   1.172  Mmux_a[0]_GND_14_o_MUX_592_o141 (a[13]_GND_14_o_MUX_579_o)
+     MUXCY:CI->O           9   0.235   0.976  Mcompar_o<12>_cy<4> (o<12>)
+     LUT5:I4->O            8   0.254   1.172  Mmux_a[0]_GND_17_o_MUX_1292_o141 (a[13]_GND_17_o_MUX_1279_o)
      LUT4:I1->O            1   0.235   0.000  Mcompar_o<11>_lut<1> (Mcompar_o<11>_lut<1>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_o<11>_cy<1> (Mcompar_o<11>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<11>_cy<2> (Mcompar_o<11>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<11>_cy<3> (Mcompar_o<11>_cy<3>)
-     MUXCY:CI->O          14   0.235   1.127  Mcompar_o<11>_cy<4> (o<11>)
-     LUT6:I5->O            6   0.254   1.152  Mmux_a[0]_GND_14_o_MUX_646_o151 (a[14]_GND_14_o_MUX_632_o)
+     MUXCY:CI->O          15   0.235   1.155  Mcompar_o<11>_cy<4> (o<11>)
+     LUT6:I5->O            6   0.254   1.152  Mmux_a[0]_GND_17_o_MUX_1319_o151 (a[14]_GND_17_o_MUX_1305_o)
      LUT5:I1->O            1   0.254   0.000  Mcompar_o<10>_lut<2> (Mcompar_o<10>_lut<2>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_o<10>_cy<2> (Mcompar_o<10>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<10>_cy<3> (Mcompar_o<10>_cy<3>)
-     MUXCY:CI->O          25   0.235   1.403  Mcompar_o<10>_cy<4> (o<10>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_698_o111 (a[10]_GND_14_o_MUX_688_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<9>_lutdi (Mcompar_o<9>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<9>_cy<0> (Mcompar_o<9>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<1> (Mcompar_o<9>_cy<1>)
+     MUXCY:CI->O          22   0.235   1.334  Mcompar_o<10>_cy<4> (o<10>)
+     LUT5:I4->O            6   0.254   1.104  a[11]_GND_17_o_MUX_1334_o1 (a[11]_GND_17_o_MUX_1359_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<9>_lut<1> (Mcompar_o<9>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<9>_cy<1> (Mcompar_o<9>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<2> (Mcompar_o<9>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<3> (Mcompar_o<9>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<4> (Mcompar_o<9>_cy<4>)
      MUXCY:CI->O          24   0.235   1.380  Mcompar_o<9>_cy<5> (o<9>)
-     LUT5:I4->O            5   0.254   1.117  Mmux_a[0]_GND_14_o_MUX_748_o121 (a[11]_GND_14_o_MUX_737_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<8>_lutdi1 (Mcompar_o<8>_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<8>_cy<1> (Mcompar_o<8>_cy<1>)
+     LUT5:I4->O            6   0.254   1.104  a[10]_GND_17_o_MUX_1360_o1 (a[10]_GND_17_o_MUX_1384_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<8>_lut<1> (Mcompar_o<8>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<8>_cy<1> (Mcompar_o<8>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<8>_cy<2> (Mcompar_o<8>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<8>_cy<3> (Mcompar_o<8>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<8>_cy<4> (Mcompar_o<8>_cy<4>)
-     MUXCY:CI->O          32   0.235   1.520  Mcompar_o<8>_cy<5> (o<8>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_796_o1141 (a[8]_GND_14_o_MUX_788_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<7>_lutdi (Mcompar_o<7>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<7>_cy<0> (Mcompar_o<7>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<1> (Mcompar_o<7>_cy<1>)
+     MUXCY:CI->O          28   0.235   1.453  Mcompar_o<8>_cy<5> (o<8>)
+     LUT5:I4->O            6   0.254   1.104  a[9]_GND_17_o_MUX_1385_o1 (a[9]_GND_17_o_MUX_1408_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<7>_lut<1> (Mcompar_o<7>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<7>_cy<1> (Mcompar_o<7>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<2> (Mcompar_o<7>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<3> (Mcompar_o<7>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<4> (Mcompar_o<7>_cy<4>)
      MUXCY:CI->O          30   0.235   1.487  Mcompar_o<7>_cy<5> (o<7>)
-     LUT5:I4->O            5   0.254   1.117  Mmux_a[0]_GND_14_o_MUX_842_o1151 (a[9]_GND_14_o_MUX_833_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<6>_lutdi1 (Mcompar_o<6>_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<6>_cy<1> (Mcompar_o<6>_cy<1>)
+     LUT5:I4->O            6   0.254   1.104  a[8]_GND_17_o_MUX_1409_o1 (a[8]_GND_17_o_MUX_1431_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<6>_lut<1> (Mcompar_o<6>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<6>_cy<1> (Mcompar_o<6>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<6>_cy<2> (Mcompar_o<6>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<6>_cy<3> (Mcompar_o<6>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<6>_cy<4> (Mcompar_o<6>_cy<4>)
-     MUXCY:CI->O          40   0.235   1.654  Mcompar_o<6>_cy<5> (o<6>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_886_o1121 (a[6]_GND_14_o_MUX_880_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<5>_lutdi (Mcompar_o<5>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<5>_cy<0> (Mcompar_o<5>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<1> (Mcompar_o<5>_cy<1>)
+     MUXCY:CI->O          34   0.235   1.553  Mcompar_o<6>_cy<5> (o<6>)
+     LUT5:I4->O            6   0.254   1.104  a[7]_GND_17_o_MUX_1432_o1 (a[7]_GND_17_o_MUX_1453_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<5>_lut<1> (Mcompar_o<5>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<5>_cy<1> (Mcompar_o<5>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<2> (Mcompar_o<5>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<3> (Mcompar_o<5>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<4> (Mcompar_o<5>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<5> (Mcompar_o<5>_cy<5>)
      MUXCY:CI->O          36   0.235   1.587  Mcompar_o<5>_cy<6> (o<5>)
-     LUT5:I4->O            5   0.254   1.117  Mmux_a[0]_GND_14_o_MUX_928_o1131 (a[7]_GND_14_o_MUX_921_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<4>_lutdi1 (Mcompar_o<4>_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<4>_cy<1> (Mcompar_o<4>_cy<1>)
+     LUT5:I4->O            6   0.254   1.104  a[6]_GND_17_o_MUX_1454_o1 (a[6]_GND_17_o_MUX_1474_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<4>_lut<1> (Mcompar_o<4>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<4>_cy<1> (Mcompar_o<4>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<2> (Mcompar_o<4>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<3> (Mcompar_o<4>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<4> (Mcompar_o<4>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<5> (Mcompar_o<4>_cy<5>)
-     MUXCY:CI->O          49   0.023   1.804  Mcompar_o<4>_cy<6> (o<4>)
-     LUT4:I3->O            4   0.254   1.080  Mmux_a[0]_GND_14_o_MUX_968_o1101 (a[4]_GND_14_o_MUX_964_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<3>_lutdi (Mcompar_o<3>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<3>_cy<0> (Mcompar_o<3>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<1> (Mcompar_o<3>_cy<1>)
+     MUXCY:CI->O          41   0.235   1.671  Mcompar_o<4>_cy<6> (o<4>)
+     LUT5:I4->O            6   0.254   1.104  a[5]_GND_17_o_MUX_1475_o1 (a[5]_GND_17_o_MUX_1494_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<3>_lut<1> (Mcompar_o<3>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<3>_cy<1> (Mcompar_o<3>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<2> (Mcompar_o<3>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<3> (Mcompar_o<3>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<4> (Mcompar_o<3>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<5> (Mcompar_o<3>_cy<5>)
-     MUXCY:CI->O          51   0.023   1.829  Mcompar_o<3>_cy<6> (o<3>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_1006_o191 (a[3]_GND_14_o_MUX_1003_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<2>_lutdi (Mcompar_o<2>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<2>_cy<0> (Mcompar_o<2>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<1> (Mcompar_o<2>_cy<1>)
+     MUXCY:CI->O          43   0.235   1.704  Mcompar_o<3>_cy<6> (o<3>)
+     LUT5:I4->O            5   0.254   1.069  a[4]_GND_17_o_MUX_1495_o1 (a[4]_GND_17_o_MUX_1513_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<2>_lut<1> (Mcompar_o<2>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<2>_cy<1> (Mcompar_o<2>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<2> (Mcompar_o<2>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<3> (Mcompar_o<2>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<4> (Mcompar_o<2>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<5> (Mcompar_o<2>_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<6> (Mcompar_o<2>_cy<6>)
      MUXCY:CI->O          43   0.235   1.704  Mcompar_o<2>_cy<7> (o<2>)
-     LUT4:I3->O            2   0.254   1.002  Mmux_a[0]_GND_14_o_MUX_1042_o181 (a[2]_GND_14_o_MUX_1040_o)
+     LUT5:I4->O            2   0.254   1.002  a[2]_GND_17_o_MUX_1515_o1 (a[2]_GND_17_o_MUX_1515_o)
      LUT4:I0->O            0   0.254   0.000  Mcompar_o<1>_lutdi (Mcompar_o<1>_lutdi)
      MUXCY:DI->O           1   0.181   0.000  Mcompar_o<1>_cy<0> (Mcompar_o<1>_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<1> (Mcompar_o<1>_cy<1>)
@@ -800,8 +929,8 @@ Delay:               54.595ns (Levels of Logic = 113)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<4> (Mcompar_o<1>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<5> (Mcompar_o<1>_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<6> (Mcompar_o<1>_cy<6>)
-     MUXCY:CI->O          24   0.235   1.380  Mcompar_o<1>_cy<7> (o<1>)
-     LUT4:I3->O            2   0.254   1.002  Mmux_n095081 (n0950<1>)
+     MUXCY:CI->O          16   0.235   1.182  Mcompar_o<1>_cy<7> (o<1>)
+     LUT3:I2->O            2   0.254   1.002  Mmux_n095081 (n0950<1>)
      LUT4:I0->O            0   0.254   0.000  Mcompar_o<0>_lutdi (Mcompar_o<0>_lutdi)
      MUXCY:DI->O           1   0.181   0.000  Mcompar_o<0>_cy<0> (Mcompar_o<0>_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<1> (Mcompar_o<0>_cy<1>)
@@ -810,20 +939,25 @@ Delay:               54.595ns (Levels of Logic = 113)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<4> (Mcompar_o<0>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<5> (Mcompar_o<0>_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<6> (Mcompar_o<0>_cy<6>)
-     MUXCY:CI->O          10   0.235   1.008  Mcompar_o<0>_cy<7> (o<0>)
-     end scope: 'alu/mul/a[15]_b[15]_div_1:o<0>'
-     end scope: 'alu/mul:a[15]_b[15]_div_1_OUT<0>'
-     end scope: 'alu:a[15]_b[15]_div_1_OUT<0>'
-     LUT6:I5->O            1   0.254   0.958  M_iter_q_FSM_FFd4-In1 (M_iter_q_FSM_FFd4-In1)
-     LUT6:I2->O            1   0.254   0.000  M_iter_q_FSM_FFd4-In7 (M_iter_q_FSM_FFd4-In)
+     MUXCY:CI->O           1   0.235   0.681  Mcompar_o<0>_cy<7> (o<0>)
+     end scope: 'alu/mod/a[15]_b[15]_div_1:o<0>'
+     DSP48A1:B0->P10       1   5.145   0.682  Maddsub_n0012 (a[15]_a[15]_mux_4_OUT<10>)
+     end scope: 'alu/mod:a[15]_a[15]_mux_4_OUT<10>'
+     LUT6:I5->O            3   0.254   1.221  Mmux_out210 (out<10>)
+     end scope: 'alu:out<10>'
+     LUT6:I0->O           11   0.254   1.039  M_alu_out[15]_GND_1_o_equal_126_o<15>1_SW0 (N5)
+     LUT6:I5->O           12   0.254   1.069  M_alu_out[15]_GND_1_o_equal_126_o<15>1 (M_alu_out[15]_GND_1_o_equal_126_o<15>1)
+     LUT6:I5->O            1   0.254   0.682  M_iter_q_FSM_FFd4-In6 (M_iter_q_FSM_FFd4-In6)
+     LUT5:I4->O            1   0.254   0.790  M_iter_q_FSM_FFd4-In7 (M_iter_q_FSM_FFd4-In7)
+     LUT5:I3->O            3   0.250   0.000  M_iter_q_FSM_FFd4-In8 (M_iter_q_FSM_FFd4-In)
      FDR:D                     0.074          M_iter_q_FSM_FFd4
     ----------------------------------------
-    Total                     54.595ns (14.968ns logic, 39.626ns route)
-                                       (27.4% logic, 72.6% route)
+    Total                     64.932ns (21.818ns logic, 43.115ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 60 / 58
+  Total number of paths / destination ports: 62 / 60
 -------------------------------------------------------------------------
 Offset:              3.526ns (Levels of Logic = 3)
   Source:            rst_n (PAD)
@@ -844,110 +978,107 @@ Offset:              3.526ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 88259773499500413000 / 41
+  Total number of paths / destination ports: 20044681341072565000000000 / 41
 -------------------------------------------------------------------------
-Offset:              58.337ns (Levels of Logic = 114)
-  Source:            M_mode_q_1 (FF)
-  Destination:       io_led<0> (PAD)
+Offset:              71.811ns (Levels of Logic = 117)
+  Source:            M_iter_q_FSM_FFd3_1 (FF)
+  Destination:       io_seg<2> (PAD)
   Source Clock:      clk rising
 
-  Data Path: M_mode_q_1 to io_led<0>
+  Data Path: M_iter_q_FSM_FFd3_1 to io_seg<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             16   0.525   1.182  M_mode_q_1 (M_mode_q_1)
-     LUT2:I1->O           16   0.254   1.612  Mmux_M_alu_b51 (M_alu_b<13>)
-     begin scope: 'alu:M_alu_b<13>'
-     begin scope: 'alu/mul:b<13>'
-     begin scope: 'alu/mul/a[15]_b[15]_div_1:b<13>'
-     LUT6:I1->O           15   0.254   1.263  o<15>221 (o<15>221)
-     LUT6:I4->O            3   0.250   0.766  Mmux_a[0]_GND_14_o_MUX_418_o161 (a[15]_GND_14_o_MUX_403_o)
-     LUT6:I5->O            6   0.254   0.876  Mmux_a[0]_GND_14_o_MUX_478_o151 (a[14]_GND_14_o_MUX_464_o)
-     LUT6:I5->O            6   0.254   1.152  Mmux_a[0]_GND_14_o_MUX_536_o141 (a[13]_GND_14_o_MUX_523_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<12>_lutdi (Mcompar_o<12>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<12>_cy<0> (Mcompar_o<12>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<12>_cy<1> (Mcompar_o<12>_cy<1>)
+     FDR:C->Q              3   0.525   1.196  M_iter_q_FSM_FFd3_1 (M_iter_q_FSM_FFd3_1)
+     LUT5:I0->O            2   0.254   0.726  _n0397<17>1_1 (_n0397<17>1)
+     LUT3:I2->O            3   0.254   1.196  Mmux_M_alu_b81_1 (Mmux_M_alu_b81)
+     begin scope: 'alu:Mmux_M_alu_b81'
+     begin scope: 'alu/mod:Mmux_M_alu_b81'
+     LUT6:I1->O            2   0.254   0.726  a[15]_b[15]_div_1_OUT<15>2 (a[15]_b[15]_div_1_OUT<15>)
+     begin scope: 'alu/mod/a[15]_b[15]_div_1:a[15]_b[15]_div_1_OUT<15>'
+     LUT6:I5->O            4   0.254   0.912  Mmux_a[0]_GND_17_o_MUX_1235_o161 (a[15]_GND_17_o_MUX_1220_o)
+     end scope: 'alu/mod/a[15]_b[15]_div_1:a[15]_GND_17_o_MUX_1220_o'
+     LUT4:I2->O            4   0.250   0.804  a[15]_b[15]_div_1_OUT<13>31 (a[15]_b[15]_div_1_OUT<13>)
+     begin scope: 'alu/mod/a[15]_b[15]_div_1:a[15]_b[15]_div_1_OUT<13>'
+     LUT6:I5->O            4   0.254   1.080  Mmux_a[0]_GND_17_o_MUX_1264_o151 (a[14]_GND_17_o_MUX_1250_o)
+     LUT5:I1->O            1   0.254   0.000  Mcompar_o<12>_lut<1> (Mcompar_o<12>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<12>_cy<1> (Mcompar_o<12>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<12>_cy<2> (Mcompar_o<12>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<12>_cy<3> (Mcompar_o<12>_cy<3>)
-     MUXCY:CI->O          10   0.235   1.008  Mcompar_o<12>_cy<4> (o<12>)
-     LUT6:I5->O            8   0.254   1.172  Mmux_a[0]_GND_14_o_MUX_592_o141 (a[13]_GND_14_o_MUX_579_o)
+     MUXCY:CI->O           9   0.235   0.976  Mcompar_o<12>_cy<4> (o<12>)
+     LUT5:I4->O            8   0.254   1.172  Mmux_a[0]_GND_17_o_MUX_1292_o141 (a[13]_GND_17_o_MUX_1279_o)
      LUT4:I1->O            1   0.235   0.000  Mcompar_o<11>_lut<1> (Mcompar_o<11>_lut<1>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_o<11>_cy<1> (Mcompar_o<11>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<11>_cy<2> (Mcompar_o<11>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<11>_cy<3> (Mcompar_o<11>_cy<3>)
-     MUXCY:CI->O          14   0.235   1.127  Mcompar_o<11>_cy<4> (o<11>)
-     LUT6:I5->O            6   0.254   1.152  Mmux_a[0]_GND_14_o_MUX_646_o151 (a[14]_GND_14_o_MUX_632_o)
+     MUXCY:CI->O          15   0.235   1.155  Mcompar_o<11>_cy<4> (o<11>)
+     LUT6:I5->O            6   0.254   1.152  Mmux_a[0]_GND_17_o_MUX_1319_o151 (a[14]_GND_17_o_MUX_1305_o)
      LUT5:I1->O            1   0.254   0.000  Mcompar_o<10>_lut<2> (Mcompar_o<10>_lut<2>)
      MUXCY:S->O            1   0.215   0.000  Mcompar_o<10>_cy<2> (Mcompar_o<10>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<10>_cy<3> (Mcompar_o<10>_cy<3>)
-     MUXCY:CI->O          25   0.235   1.403  Mcompar_o<10>_cy<4> (o<10>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_698_o111 (a[10]_GND_14_o_MUX_688_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<9>_lutdi (Mcompar_o<9>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<9>_cy<0> (Mcompar_o<9>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<1> (Mcompar_o<9>_cy<1>)
+     MUXCY:CI->O          22   0.235   1.334  Mcompar_o<10>_cy<4> (o<10>)
+     LUT5:I4->O            6   0.254   1.104  a[11]_GND_17_o_MUX_1334_o1 (a[11]_GND_17_o_MUX_1359_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<9>_lut<1> (Mcompar_o<9>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<9>_cy<1> (Mcompar_o<9>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<2> (Mcompar_o<9>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<3> (Mcompar_o<9>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<9>_cy<4> (Mcompar_o<9>_cy<4>)
      MUXCY:CI->O          24   0.235   1.380  Mcompar_o<9>_cy<5> (o<9>)
-     LUT5:I4->O            5   0.254   1.117  Mmux_a[0]_GND_14_o_MUX_748_o121 (a[11]_GND_14_o_MUX_737_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<8>_lutdi1 (Mcompar_o<8>_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<8>_cy<1> (Mcompar_o<8>_cy<1>)
+     LUT5:I4->O            6   0.254   1.104  a[10]_GND_17_o_MUX_1360_o1 (a[10]_GND_17_o_MUX_1384_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<8>_lut<1> (Mcompar_o<8>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<8>_cy<1> (Mcompar_o<8>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<8>_cy<2> (Mcompar_o<8>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<8>_cy<3> (Mcompar_o<8>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<8>_cy<4> (Mcompar_o<8>_cy<4>)
-     MUXCY:CI->O          32   0.235   1.520  Mcompar_o<8>_cy<5> (o<8>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_796_o1141 (a[8]_GND_14_o_MUX_788_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<7>_lutdi (Mcompar_o<7>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<7>_cy<0> (Mcompar_o<7>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<1> (Mcompar_o<7>_cy<1>)
+     MUXCY:CI->O          28   0.235   1.453  Mcompar_o<8>_cy<5> (o<8>)
+     LUT5:I4->O            6   0.254   1.104  a[9]_GND_17_o_MUX_1385_o1 (a[9]_GND_17_o_MUX_1408_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<7>_lut<1> (Mcompar_o<7>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<7>_cy<1> (Mcompar_o<7>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<2> (Mcompar_o<7>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<3> (Mcompar_o<7>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<7>_cy<4> (Mcompar_o<7>_cy<4>)
      MUXCY:CI->O          30   0.235   1.487  Mcompar_o<7>_cy<5> (o<7>)
-     LUT5:I4->O            5   0.254   1.117  Mmux_a[0]_GND_14_o_MUX_842_o1151 (a[9]_GND_14_o_MUX_833_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<6>_lutdi1 (Mcompar_o<6>_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<6>_cy<1> (Mcompar_o<6>_cy<1>)
+     LUT5:I4->O            6   0.254   1.104  a[8]_GND_17_o_MUX_1409_o1 (a[8]_GND_17_o_MUX_1431_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<6>_lut<1> (Mcompar_o<6>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<6>_cy<1> (Mcompar_o<6>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<6>_cy<2> (Mcompar_o<6>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<6>_cy<3> (Mcompar_o<6>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<6>_cy<4> (Mcompar_o<6>_cy<4>)
-     MUXCY:CI->O          40   0.235   1.654  Mcompar_o<6>_cy<5> (o<6>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_886_o1121 (a[6]_GND_14_o_MUX_880_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<5>_lutdi (Mcompar_o<5>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<5>_cy<0> (Mcompar_o<5>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<1> (Mcompar_o<5>_cy<1>)
+     MUXCY:CI->O          34   0.235   1.553  Mcompar_o<6>_cy<5> (o<6>)
+     LUT5:I4->O            6   0.254   1.104  a[7]_GND_17_o_MUX_1432_o1 (a[7]_GND_17_o_MUX_1453_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<5>_lut<1> (Mcompar_o<5>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<5>_cy<1> (Mcompar_o<5>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<2> (Mcompar_o<5>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<3> (Mcompar_o<5>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<4> (Mcompar_o<5>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<5>_cy<5> (Mcompar_o<5>_cy<5>)
      MUXCY:CI->O          36   0.235   1.587  Mcompar_o<5>_cy<6> (o<5>)
-     LUT5:I4->O            5   0.254   1.117  Mmux_a[0]_GND_14_o_MUX_928_o1131 (a[7]_GND_14_o_MUX_921_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<4>_lutdi1 (Mcompar_o<4>_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<4>_cy<1> (Mcompar_o<4>_cy<1>)
+     LUT5:I4->O            6   0.254   1.104  a[6]_GND_17_o_MUX_1454_o1 (a[6]_GND_17_o_MUX_1474_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<4>_lut<1> (Mcompar_o<4>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<4>_cy<1> (Mcompar_o<4>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<2> (Mcompar_o<4>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<3> (Mcompar_o<4>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<4> (Mcompar_o<4>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<4>_cy<5> (Mcompar_o<4>_cy<5>)
-     MUXCY:CI->O          49   0.023   1.804  Mcompar_o<4>_cy<6> (o<4>)
-     LUT4:I3->O            4   0.254   1.080  Mmux_a[0]_GND_14_o_MUX_968_o1101 (a[4]_GND_14_o_MUX_964_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<3>_lutdi (Mcompar_o<3>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<3>_cy<0> (Mcompar_o<3>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<1> (Mcompar_o<3>_cy<1>)
+     MUXCY:CI->O          41   0.235   1.671  Mcompar_o<4>_cy<6> (o<4>)
+     LUT5:I4->O            6   0.254   1.104  a[5]_GND_17_o_MUX_1475_o1 (a[5]_GND_17_o_MUX_1494_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<3>_lut<1> (Mcompar_o<3>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<3>_cy<1> (Mcompar_o<3>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<2> (Mcompar_o<3>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<3> (Mcompar_o<3>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<4> (Mcompar_o<3>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<3>_cy<5> (Mcompar_o<3>_cy<5>)
-     MUXCY:CI->O          51   0.023   1.829  Mcompar_o<3>_cy<6> (o<3>)
-     LUT4:I3->O            3   0.254   1.042  Mmux_a[0]_GND_14_o_MUX_1006_o191 (a[3]_GND_14_o_MUX_1003_o)
-     LUT4:I0->O            0   0.254   0.000  Mcompar_o<2>_lutdi (Mcompar_o<2>_lutdi)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_o<2>_cy<0> (Mcompar_o<2>_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<1> (Mcompar_o<2>_cy<1>)
+     MUXCY:CI->O          43   0.235   1.704  Mcompar_o<3>_cy<6> (o<3>)
+     LUT5:I4->O            5   0.254   1.069  a[4]_GND_17_o_MUX_1495_o1 (a[4]_GND_17_o_MUX_1513_o_bdd0)
+     LUT4:I1->O            1   0.235   0.000  Mcompar_o<2>_lut<1> (Mcompar_o<2>_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_o<2>_cy<1> (Mcompar_o<2>_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<2> (Mcompar_o<2>_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<3> (Mcompar_o<2>_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<4> (Mcompar_o<2>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<5> (Mcompar_o<2>_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<2>_cy<6> (Mcompar_o<2>_cy<6>)
      MUXCY:CI->O          43   0.235   1.704  Mcompar_o<2>_cy<7> (o<2>)
-     LUT4:I3->O            2   0.254   1.002  Mmux_a[0]_GND_14_o_MUX_1042_o181 (a[2]_GND_14_o_MUX_1040_o)
+     LUT5:I4->O            2   0.254   1.002  a[2]_GND_17_o_MUX_1515_o1 (a[2]_GND_17_o_MUX_1515_o)
      LUT4:I0->O            0   0.254   0.000  Mcompar_o<1>_lutdi (Mcompar_o<1>_lutdi)
      MUXCY:DI->O           1   0.181   0.000  Mcompar_o<1>_cy<0> (Mcompar_o<1>_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<1> (Mcompar_o<1>_cy<1>)
@@ -956,8 +1087,8 @@ Offset:              58.337ns (Levels of Logic = 114)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<4> (Mcompar_o<1>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<5> (Mcompar_o<1>_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<1>_cy<6> (Mcompar_o<1>_cy<6>)
-     MUXCY:CI->O          24   0.235   1.380  Mcompar_o<1>_cy<7> (o<1>)
-     LUT4:I3->O            2   0.254   1.002  Mmux_n095081 (n0950<1>)
+     MUXCY:CI->O          16   0.235   1.182  Mcompar_o<1>_cy<7> (o<1>)
+     LUT3:I2->O            2   0.254   1.002  Mmux_n095081 (n0950<1>)
      LUT4:I0->O            0   0.254   0.000  Mcompar_o<0>_lutdi (Mcompar_o<0>_lutdi)
      MUXCY:DI->O           1   0.181   0.000  Mcompar_o<0>_cy<0> (Mcompar_o<0>_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<1> (Mcompar_o<0>_cy<1>)
@@ -966,35 +1097,45 @@ Offset:              58.337ns (Levels of Logic = 114)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<4> (Mcompar_o<0>_cy<4>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<5> (Mcompar_o<0>_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_o<0>_cy<6> (Mcompar_o<0>_cy<6>)
-     MUXCY:CI->O          10   0.235   1.008  Mcompar_o<0>_cy<7> (o<0>)
-     end scope: 'alu/mul/a[15]_b[15]_div_1:o<0>'
-     end scope: 'alu/mul:a[15]_b[15]_div_1_OUT<0>'
-     LUT6:I5->O            2   0.254   1.181  Mmux_out121 (out<0>)
-     end scope: 'alu:out<0>'
-     LUT6:I0->O            1   0.254   0.681  Mmux_io_led11 (io_led_0_OBUF)
-     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
+     MUXCY:CI->O           1   0.235   0.681  Mcompar_o<0>_cy<7> (o<0>)
+     end scope: 'alu/mod/a[15]_b[15]_div_1:o<0>'
+     DSP48A1:B0->P10       1   5.145   0.682  Maddsub_n0012 (a[15]_a[15]_mux_4_OUT<10>)
+     end scope: 'alu/mod:a[15]_a[15]_mux_4_OUT<10>'
+     LUT6:I5->O            3   0.254   1.221  Mmux_out210 (out<10>)
+     end scope: 'alu:out<10>'
+     LUT6:I0->O           11   0.254   1.039  M_alu_out[15]_GND_1_o_equal_126_o<15>1_SW0 (N5)
+     LUT6:I5->O           12   0.254   1.345  M_alu_out[15]_GND_1_o_equal_126_o<15>1 (M_alu_out[15]_GND_1_o_equal_126_o<15>1)
+     LUT6:I2->O            1   0.254   0.790  M_alu_out[15]_GND_1_o_equal_70_o<15>1 (M_alu_out[15]_GND_1_o_equal_70_o)
+     LUT6:I4->O            2   0.250   0.954  Mmux_M_iter_q[4]_M_alu_first[3]_wide_mux_183_OUT102 (Mmux_M_iter_q[4]_M_alu_first[3]_wide_mux_183_OUT1)
+     LUT6:I3->O            1   0.235   0.958  Sh4516 (Sh4516)
+     LUT6:I2->O            7   0.254   1.365  Sh4517 (Sh45)
+     LUT6:I0->O            1   0.254   0.681  io_seg<2>1 (io_seg_2_OBUF)
+     OBUF:I->O                 2.912          io_seg_2_OBUF (io_seg<2>)
     ----------------------------------------
-    Total                     58.337ns (17.806ns logic, 40.530ns route)
-                                       (30.5% logic, 69.5% route)
+    Total                     71.811ns (25.145ns logic, 46.667ns route)
+                                       (35.0% logic, 65.0% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 43 / 27
+  Total number of paths / destination ports: 46 / 30
 -------------------------------------------------------------------------
-Delay:               6.670ns (Levels of Logic = 3)
+Delay:               10.692ns (Levels of Logic = 6)
   Source:            io_button<0> (PAD)
-  Destination:       io_led<15> (PAD)
+  Destination:       led<0> (PAD)
 
-  Data Path: io_button<0> to io_led<15>
+  Data Path: io_button<0> to led<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            20   1.328   1.514  io_button_0_IBUF (io_button_0_IBUF)
-     LUT6:I3->O            1   0.235   0.681  Mmux_io_led241 (io_led_9_OBUF)
-     OBUF:I->O                 2.912          io_led_9_OBUF (io_led<9>)
+     IBUF:I->O            21   1.328   1.310  io_button_0_IBUF (io_button_0_IBUF)
+     LUT6:I5->O            3   0.254   1.196  Mmux_led11 (Mmux_led11)
+     LUT5:I0->O            1   0.254   1.137  Mmux_led14 (Mmux_led13)
+     LUT6:I0->O            1   0.254   1.112  Mmux_led15 (Mmux_led14)
+     LUT5:I0->O            1   0.254   0.681  Mmux_led16 (led_0_OBUF)
+     OBUF:I->O                 2.912          led_0_OBUF (led<0>)
     ----------------------------------------
-    Total                      6.670ns (4.475ns logic, 2.195ns route)
-                                       (67.1% logic, 32.9% route)
+    Total                     10.692ns (5.256ns logic, 5.436ns route)
+                                       (49.2% logic, 50.8% route)
 
 =========================================================================
 
@@ -1006,20 +1147,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   54.595|         |         |         |
+clk            |   64.932|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 31.00 secs
-Total CPU time to Xst completion: 30.48 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 20.02 secs
  
 --> 
 
-Total memory usage is 301756 kilobytes
+Total memory usage is 275484 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
-Number of infos    :   28 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :   25 (   0 filtered)
 

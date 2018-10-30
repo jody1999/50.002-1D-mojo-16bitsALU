@@ -15,12 +15,16 @@ module combinedALU_3 (
     output reg [15:0] out,
     output reg z,
     output reg v,
-    output reg n
+    output reg n,
+    output reg [7:0] led
   );
   
   
   
   wire [16-1:0] M_add_out;
+  wire [1-1:0] M_add_z;
+  wire [1-1:0] M_add_v;
+  wire [1-1:0] M_add_n;
   reg [16-1:0] M_add_a;
   reg [16-1:0] M_add_b;
   reg [2-1:0] M_add_alufn;
@@ -28,19 +32,20 @@ module combinedALU_3 (
     .a(M_add_a),
     .b(M_add_b),
     .alufn(M_add_alufn),
-    .out(M_add_out)
+    .out(M_add_out),
+    .z(M_add_z),
+    .v(M_add_v),
+    .n(M_add_n)
   );
   
   wire [16-1:0] M_cmp_out;
   reg [6-1:0] M_cmp_alufn;
-  reg [1-1:0] M_cmp_z;
-  reg [1-1:0] M_cmp_v;
-  reg [1-1:0] M_cmp_n;
+  reg [16-1:0] M_cmp_a;
+  reg [16-1:0] M_cmp_b;
   compare_16bits_8 cmp (
     .alufn(M_cmp_alufn),
-    .z(M_cmp_z),
-    .v(M_cmp_v),
-    .n(M_cmp_n),
+    .a(M_cmp_a),
+    .b(M_cmp_b),
     .out(M_cmp_out)
   );
   
@@ -77,18 +82,29 @@ module combinedALU_3 (
     .out(M_mul_out)
   );
   
+  wire [16-1:0] M_mod_out;
+  reg [16-1:0] M_mod_a;
+  reg [16-1:0] M_mod_b;
+  reg [6-1:0] M_mod_alufn;
+  mod_16_12 mod (
+    .a(M_mod_a),
+    .b(M_mod_b),
+    .alufn(M_mod_alufn),
+    .out(M_mod_out)
+  );
+  
   wire [1-1:0] M_zvn_z;
   wire [1-1:0] M_zvn_v;
   wire [1-1:0] M_zvn_n;
   reg [16-1:0] M_zvn_a;
   reg [16-1:0] M_zvn_b;
-  reg [16-1:0] M_zvn_out;
   reg [6-1:0] M_zvn_alufn;
-  getZVN_12 zvn (
+  reg [16-1:0] M_zvn_out;
+  getZVN_13 zvn (
     .a(M_zvn_a),
     .b(M_zvn_b),
-    .out(M_zvn_out),
     .alufn(M_zvn_alufn),
+    .out(M_zvn_out),
     .z(M_zvn_z),
     .v(M_zvn_v),
     .n(M_zvn_n)
@@ -96,6 +112,7 @@ module combinedALU_3 (
   
   always @* begin
     out = 1'h0;
+    led[0+2-:3] = 1'h0;
     M_add_a = a;
     M_add_b = b;
     M_add_alufn = alufn[0+1-:2];
@@ -112,18 +129,20 @@ module combinedALU_3 (
     z = M_zvn_z;
     v = M_zvn_v;
     n = M_zvn_n;
-    M_cmp_z = M_zvn_z;
-    M_cmp_v = M_zvn_v;
-    M_cmp_n = M_zvn_n;
+    M_cmp_a = a;
+    M_cmp_b = b;
     M_cmp_alufn = alufn;
     M_mul_a = a;
     M_mul_b = b;
     M_mul_alufn = alufn;
+    M_mod_a = a;
+    M_mod_b = b;
+    M_mod_alufn = alufn;
     first = 4'h0;
     second = 4'h0;
     third = 4'h0;
     fourth = 4'h0;
-    if (alufn[0+5-:6] != 6'h00 & alufn[0+5-:6] != 6'h01 & alufn[0+5-:6] != 6'h18 & alufn[0+5-:6] != 6'h1e & alufn[0+5-:6] != 6'h16 & alufn[0+5-:6] != 6'h1a & alufn[0+5-:6] != 6'h19 & alufn[0+5-:6] != 6'h20 & alufn[0+5-:6] != 6'h21 & alufn[0+5-:6] != 6'h23 & alufn[0+5-:6] != 6'h23 & alufn[0+5-:6] != 6'h35 & alufn[0+5-:6] != 6'h37 & alufn[0+5-:6] != 6'h02 & alufn[0+5-:6] != 6'h03) begin
+    if (alufn[0+5-:6] != 6'h00 & alufn[0+5-:6] != 6'h01 & alufn[0+5-:6] != 6'h18 & alufn[0+5-:6] != 6'h1e & alufn[0+5-:6] != 6'h16 & alufn[0+5-:6] != 6'h1a & alufn[0+5-:6] != 6'h19 & alufn[0+5-:6] != 6'h20 & alufn[0+5-:6] != 6'h21 & alufn[0+5-:6] != 6'h23 & alufn[0+5-:6] != 6'h23 & alufn[0+5-:6] != 6'h35 & alufn[0+5-:6] != 6'h37 & alufn[0+5-:6] != 6'h02 & alufn[0+5-:6] != 6'h03 & alufn[0+5-:6] != 6'h33 & alufn[0+5-:6] != 6'h07) begin
       first = 4'hf;
       second = 4'hf;
       third = 4'hf;
@@ -136,12 +155,18 @@ module combinedALU_3 (
           second = 4'h4;
           third = 4'h4;
           out = M_add_out;
+          led[0+0-:1] = M_add_z;
+          led[1+0-:1] = M_add_v;
+          led[2+0-:1] = M_add_n;
         end
         6'h01: begin
           first = 4'hd;
           second = 4'he;
           third = 4'h2;
           out = M_add_out;
+          led[0+0-:1] = M_add_z;
+          led[1+0-:1] = M_add_v;
+          led[2+0-:1] = M_add_n;
         end
         6'h18: begin
           first = 4'h1;
@@ -230,9 +255,22 @@ module combinedALU_3 (
             out = M_mul_out;
           end
         end
+        6'h07: begin
+          if (b == 1'h0) begin
+            first = 4'hf;
+            second = 4'hf;
+            third = 4'hf;
+            fourth = 4'hf;
+            out = M_mod_out;
+          end else begin
+            first = 4'h8;
+            second = 4'ha;
+            third = 4'h4;
+            out = M_mod_out;
+          end
+        end
         default: begin
           out = 16'h0000;
-          M_mul_b = 16'h0001;
         end
       endcase
     end
