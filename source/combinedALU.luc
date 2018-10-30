@@ -3,6 +3,11 @@ module combinedALU (
     input b[16],
     input alufn[6],
     
+    output first[4],
+    output second[4],
+    output third[4],
+    output fourth[4],
+    
     output out[16],
     output z,
     output v,
@@ -13,14 +18,16 @@ module combinedALU (
   compare_16bits cmp;
   shift_16bits   shf;
   boolean_16bits bool;
+  multiplier_16bits mul;
   getZVN    zvn;
+  
 
   always {
     out = 0;
               
     add.a = a;         //assign to add modulel
     add.b = b;
-    add.alufn0 = alufn[0];
+    add.alufn = alufn[1:0];
               
     bool.a = a;        //assign to boolean module
     bool.b = b;
@@ -43,16 +50,167 @@ module combinedALU (
     cmp.v = zvn.v;
     cmp.n = zvn.n;
     cmp.alufn = alufn;
-
-     
-    case(alufn[5:4]) {
-      2b00:out = add.out;
-      2b01:out = bool.out;
-      2b10:out = shf.out;
-      2b11:out = cmp.out;
+    
+    mul.a = a;           //assign to multiplie module
+    mul.b = b;
+    mul.alufn = alufn;
+    
+    first = 4h0;        //default values for led 
+    second = 4h0;
+    third = 4h0;
+    fourth = 4h0;
+    
+    if (alufn[5:0]!=6b000000
+    &alufn[5:0]!=6b000001
+      &alufn[5:0]!=6b011000
+      &alufn[5:0]!=6b011110
+      &alufn[5:0]!=6b010110
+      &alufn[5:0]!=6b011010
+      &alufn[5:0]!=6b011001
+      &alufn[5:0]!=6b100000
+      &alufn[5:0]!=6b100001
+      &alufn[5:0]!=6b100011
+      &alufn[5:0]!=6b100011
+      &alufn[5:0]!=6b110101
+      &alufn[5:0]!=6b110111
+      &alufn[5:0]!=6b000010
+      &alufn[5:0]!=6b000011){
+      first = 4hf;
+      second = 4hf;
+      third = 4hf;
+      fourth = 4hf;
+      }
+    else{
+      case(alufn[5:0]) {
       
-      default:
-        out = 16h0000;
+         6b000000:          // add     
+            first = 4h1;
+            second = 4h4;
+            third = 4h4;   
+            out = add.out;
+            
+         
+         6b000001:          // sub
+            first = 4hd;
+            second = 4he;
+            third = 4h2;           
+            out = add.out;
+  
+         6b011000:           //and
+            first = 4h1;
+            second = 4h9;
+            third = 4h4;
+            
+            out = bool.out;
+  
+          
+          6b011110:        //or
+            first = 4ha;
+            second = 4hc;
+            third = 0;
+           
+            out = bool.out;
+  
+          6b010110:         //xor
+            first = 4hf;
+            second = 4ha;
+            third = 4hc;
+           
+            out = bool.out;
+            
+            
+          6b011010:           //A
+            first = 4h7;
+            second = 4h4;
+            third = 4hc;
+          
+            out = bool.out;
+            
+          
+          6b011001:           //xnor
+            first = 4hf;
+            second = 4h9;
+            third = 4ha;
+            fourth = 4hc;
+          
+            out = bool.out;
+            
+          
+          6b100000:           //SHL
+            first = 4hd;  
+            second = 4h6;
+            third = 4h7;
+          
+            out = shf.out;
+            
+            
+          6b100001:           //SHR
+            first = 4hd;
+            second = 4h6;
+            third = 4hc;
+          
+            out = shf.out;
+            
+          6b100011:           //SRA
+            first = 4hd;
+            second = 4hc;
+            third = 4h1;
+          
+            out = shf.out;
+            
+          
+          6b110011:           //CMPEQ
+            first = 4h3;
+            second = 4h5;
+            third = 4ha;
+          
+            out = cmp.out;
+            
+          6b110101:           //CMPLT
+            first = 4h3;
+            second = 4h7;
+            third = 0;
+          
+            out = cmp.out;
+            
+          
+          6b110111:           //CMPLE
+            first = 4h3;
+            second = 4h7;
+            third = 4h5;
+          
+            out = cmp.out;
+            
+          
+          6b000010:            //multiply
+            first = 4h8;
+            second = 4he;
+            third = 4h7;
+            
+            out = mul.out;
+            
+            
+          6b000011:            //divide
+            if (b == 0){
+               first = 4hf;
+               second = 4hf;
+               third = 4hf;
+               fourth = 4hf;
+               out = mul.out;
+  
+            }else{
+              first = 4h4;
+              second = 4h4;
+              third = 4h5;
+              
+              out = mul.out;
+           }
+           
+        default:
+          
+          out = 16h0000;
+          mul.b = 16h1;
+      }
     }
   }
 }

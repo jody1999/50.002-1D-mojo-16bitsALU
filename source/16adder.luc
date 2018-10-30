@@ -1,39 +1,18 @@
 module adder_16bits (
-    input a [16],
-    input b [16],
-    input alufn0,
+    input a[16],
+    input b[16],
+    input alufn[2],
     output out[16]
-  ) {
-
-  sig s[16];
-  sig xb[16];
-  var sub;
-  connectadder16bits add;
-
+  ) {  
   always {
-    sub=alufn0;
-    add.alufn0=0;
-    add.b=0;
-    add.a=0;
-    xb=16b0;
-    s=16b0;
-    out=0;
-  
-    case(alufn0){
-      0:                       //Addition
-        add.alufn0=alufn0;
-        add.a=a;
-        add.b=b;
-        s=add.s;
-        out=s;
-     
-      1:                       //Subtraction       
-        xb=b^16x{alufn0};
-        add.alufn0=alufn0;
-        add.a=a;
-        add.b=xb;
-        s[15:0]=add.s[15:0];
-        out[15:0]=s[15:0];
-    }
+    case(alufn[1:0]) {
+      2b00:
+        out = a + b;
+      2b01:
+        out = a - b;
+   
+      default:
+        out = 0;
+}
   }
 }
